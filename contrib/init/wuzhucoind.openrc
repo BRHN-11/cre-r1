@@ -1,0 +1,86 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/wuzhucoin/.wuzhucoin" ]; then
+	WUZHUCOIND_DEFAULT_DATADIR="/var/lib/wuzhucoin/.wuzhucoin"
+else
+	WUZHUCOIND_DEFAULT_DATADIR="/var/lib/wuzhucoind"
+fi
+
+WUZHUCOIND_CONFIGFILE=${WUZHUCOIND_CONFIGFILE:-/etc/wuzhucoin/wuzhucoin.conf}
+WUZHUCOIND_PIDDIR=${WUZHUCOIND_PIDDIR:-/var/run/wuzhucoind}
+WUZHUCOIND_PIDFILE=${WUZHUCOIND_PIDFILE:-${WUZHUCOIND_PIDDIR}/wuzhucoind.pid}
+WUZHUCOIND_DATADIR=${WUZHUCOIND_DATADIR:-${WUZHUCOIND_DEFAULT_DATADIR}}
+WUZHUCOIND_USER=${WUZHUCOIND_USER:-wuzhucoin}
+WUZHUCOIND_GROUP=${WUZHUCOIND_GROUP:-wuzhucoin}
+WUZHUCOIND_BIN=${WUZHUCOIND_BIN:-/usr/bin/wuzhucoind}
+
+name="Wuzhucoin Core Daemon"
+description="Wuzhucoin crypto-currency p2p network daemon"
+
+command="/usr/bin/wuzhucoind"
+command_args="-pid=\"${WUZHUCOIND_PIDFILE}\" \
+		-conf=\"${WUZHUCOIND_CONFIGFILE}\" \
+		-datadir=\"${WUZHUCOIND_DATADIR}\" \
+		-daemon \
+		${WUZHUCOIND_OPTS}"
+
+required_files="${WUZHUCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${WUZHUCOIND_USER} \
+			-N ${WUZHUCOIND_NICE:-0} -w 2000"
+pidfile="${WUZHUCOIND_PIDFILE}"
+retry=60
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${WUZHUCOIND_USER}:${WUZHUCOIND_GROUP}" \
+	"${WUZHUCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${WUZHUCOIND_USER}:${WUZHUCOIND_GROUP}" \
+	"${WUZHUCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o ${WUZHUCOIND_USER}:${WUZHUCOIND_GROUP} \
+	-m 0660 \
+	${WUZHUCOIND_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${WUZHUCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run wuzhucoind."
+		eerror "The setting must appear in ${WUZHUCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is also recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Wuzhucoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

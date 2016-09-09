@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wuzhucoin
+Comment=Wuzhucoin P2P Cryptocurrency
+Comment[fr]=Wuzhucoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Wuzhucoin, eşten eşe kriptografik sanal para birimi
+Exec=wuzhucoin-qt %u
+Terminal=false
+Type=Application
+Icon=wuzhucoin128
+MimeType=x-scheme-handler/wuzhucoin;
+Categories=Office;Finance;
