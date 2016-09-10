@@ -126,11 +126,11 @@ BOOST_AUTO_TEST_CASE(subnet_test)
     BOOST_CHECK(CSubNet("::/0").Match(CNetAddr("1:2:3:4:5:6:7:1234")));
     BOOST_CHECK(CSubNet("::/0").Match(CNetAddr("1.2.3.4")));
     // All-Matching IPv4 does not Match IPv6
-    BOOST_CHECK(!CSubNet("0.0.0.0/0").Match(CNetAddr("1:2:3:4:5:6:7:1234")));
+    BOOST_CHECK(!CSubNet("127.0.0.1/0").Match(CNetAddr("1:2:3:4:5:6:7:1234")));
     // Invalid subnets Match nothing (not even invalid addresses)
     BOOST_CHECK(!CSubNet().Match(CNetAddr("1.2.3.4")));
     BOOST_CHECK(!CSubNet("").Match(CNetAddr("4.5.6.7")));
-    BOOST_CHECK(!CSubNet("bloop").Match(CNetAddr("0.0.0.0")));
+    BOOST_CHECK(!CSubNet("bloop").Match(CNetAddr("127.0.0.1")));
     BOOST_CHECK(!CSubNet("bloop").Match(CNetAddr("hab")));
     // Check valid/invalid
     BOOST_CHECK(CSubNet("1.2.3.0/0").IsValid());

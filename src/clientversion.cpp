@@ -13,12 +13,12 @@
  * for both wuzhucoind and wuzhucoin-core, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("shell");
+const std::string CLIENT_NAME("pochi");
 
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX ""
+#define CLIENT_VERSION_SUFFIX "r2"
 
 
 /**
@@ -46,7 +46,7 @@ const std::string CLIENT_NAME("shell");
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #define GIT_COMMIT_ID "d1691e5"
-#define GIT_COMMIT_DATE "Sat, 2 Jan 2016 09:55:24 +1100"
+#define GIT_COMMIT_DATE "Sat, 10 Sept 2016 09:55:24 +1100"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

@@ -575,7 +575,7 @@ bool ConnectSocketByName(CService &addr, SOCKET& hSocketRet, const char *pszDest
         return ConnectSocket(addr, hSocketRet, nTimeout);
     }
 
-    addr = CService("0.0.0.0:0");
+    addr = CService("127.0.0.1:0");
 
     if (!HaveNameProxy())
         return false;

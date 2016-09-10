@@ -77,7 +77,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
         boost::assign::map_list_of
-        ( 0, uint256("0x1472390652"))
+        ( 0, uint256("0xc39772728bf193d642a4352110f4ba24805afe736423d6888a58676abd2d6f35"))
         ;
 static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
@@ -142,6 +142,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xa8b81f992813199b850b8ed9e1ee8babd7241916ac16643db371ccfbe492516c"));
 
 
+        vSeeds.push_back(CDNSSeedData("wuzhucoinnode-this", "197.215.253.222"));
         vSeeds.push_back(CDNSSeedData("wuzhucoinnode-this", "0.0.0.0"));
         //vSeeds.push_back(CDNSSeedData("wuzhucoinnode-lavaithon", "169.255.184.184"));
         //vSeeds.push_back(CDNSSeedData("wuzhucoin-aisha", "54.81.69.151"));
@@ -206,7 +207,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("this-node", "0.0.0.0"));
+        vSeeds.push_back(CDNSSeedData("this-node", "127.0.0.1"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(111);
