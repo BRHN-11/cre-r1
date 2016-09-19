@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_RECEIVECOINSDIALOG_H
-#define WUZHUCOIN_QT_RECEIVECOINSDIALOG_H
+#ifndef COWRIE_QT_RECEIVECOINSDIALOG_H
+#define COWRIE_QT_RECEIVECOINSDIALOG_H
 
 #include "guiutil.h"
 
@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class QModelIndex;
 QT_END_NAMESPACE
 
-/** Dialog for requesting payment of wuzhucoins */
+/** Dialog for requesting payment of cowries */
 class ReceiveCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -73,4 +73,4 @@ private slots:
     void copyAmount();
 };
 
-#endif // WUZHUCOIN_QT_RECEIVECOINSDIALOG_H
+#endif // COWRIE_QT_RECEIVECOINSDIALOG_H

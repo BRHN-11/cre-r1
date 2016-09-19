@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +27,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// WuzhucoinMiner
+// CowrieMiner
 //
 
 //
@@ -387,7 +387,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("WuzhucoinMiner : generated block is stale");
+            return error("CowrieMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -402,16 +402,16 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock))
-        return error("WuzhucoinMiner : ProcessNewBlock, block not accepted");
+        return error("CowrieMiner : ProcessNewBlock, block not accepted");
 
     return true;
 }
 
-void static WuzhucoinMiner(CWallet *pwallet)
+void static CowrieMiner(CWallet *pwallet)
 {
-    LogPrintf("WuzhucoinMiner started\n");
+    LogPrintf("CowrieMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("wuzhucoin-miner");
+    RenameThread("cowrie-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -443,13 +443,13 @@ void static WuzhucoinMiner(CWallet *pwallet)
             auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey));
             if (!pblocktemplate.get())
             {
-                LogPrintf("Error in WuzhucoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
+                LogPrintf("Error in CowrieMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
                 return;
             }
             CBlock *pblock = &pblocktemplate->block;
             IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-            LogPrintf("Running WuzhucoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+            LogPrintf("Running CowrieMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
                 ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
             //
@@ -468,7 +468,7 @@ void static WuzhucoinMiner(CWallet *pwallet)
                     {
                         // Found a solution
                         SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                        LogPrintf("WuzhucoinMiner:\n");
+                        LogPrintf("CowrieMiner:\n");
                         LogPrintf("proof-of-work found  \n  powhash: %s  \ntarget: %s\n", thash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, *pwallet, reservekey);
                         SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -538,17 +538,17 @@ void static WuzhucoinMiner(CWallet *pwallet)
     }
     catch (boost::thread_interrupted)
     {
-        LogPrintf("WuzhucoinMiner terminated\n");
+        LogPrintf("CowrieMiner terminated\n");
         throw;
     }
     catch (const std::runtime_error &e)
     {
-        LogPrintf("WuzhucoinMiner runtime error: %s\n", e.what());
+        LogPrintf("CowrieMiner runtime error: %s\n", e.what());
         return;
     }
 }
 
-void GenerateWuzhucoins(bool fGenerate, CWallet* pwallet, int nThreads)
+void GenerateCowries(bool fGenerate, CWallet* pwallet, int nThreads)
 {
     static boost::thread_group* minerThreads = NULL;
 
@@ -572,7 +572,7 @@ void GenerateWuzhucoins(bool fGenerate, CWallet* pwallet, int nThreads)
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&WuzhucoinMiner, pwallet));
+        minerThreads->create_thread(boost::bind(&CowrieMiner, pwallet));
 }
 
 #endif // ENABLE_WALLET

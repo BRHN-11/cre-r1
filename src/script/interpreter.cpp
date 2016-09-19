@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -92,7 +92,7 @@ bool static IsCompressedOrUncompressedPubKey(const valtype &vchPubKey) {
  * excessively padded (do not start with a 0 byte, unless an otherwise negative number follows,
  * in which case a single 0 byte is necessary and even required).
  * 
- * See https://wuzhucointalk.org/index.php?topic=8392.msg127623#msg127623
+ * See https://cowrietalk.org/index.php?topic=8392.msg127623#msg127623
  *
  * This function is consensus-critical since BIP66.
  */

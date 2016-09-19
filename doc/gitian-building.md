@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of Wuzhucoin using a Debian VM or physical system.*
+*Setup instructions for a Gitian build of Cowrie using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Wuzhucoin
+Gitian is the deterministic build process that is used to build the Cowrie
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to wuzhucoin.org.
+to cowrie.org.
 
 More independent Gitian builders are needed, which is why I wrote this
 guide. It is preferred to follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up Gitian images](#setting-up-gitian-images)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Wuzhucoin](#building-wuzhucoin)
+- [Building Cowrie](#building-cowrie)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -277,12 +277,12 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for wuzhucoin and Gitian and then checkout the wuzhucoin version that you want to build.
+Clone the git repositories for cowrie and Gitian and then checkout the cowrie version that you want to build.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/wuzhucoin-project/wuzhucoin.git
-cd wuzhucoin
+git clone https://github.com/cowrie-project/cowrie.git
+cd cowrie
 git checkout v${VERSION}
 cd ..
 ```
@@ -310,16 +310,16 @@ There will be a lot of warnings printed during build of the images. These can be
 Getting and building the inputs
 --------------------------------
 
-Follow the instructions in [doc/release-process.md](release-process.md) in the wuzhucoin repository
+Follow the instructions in [doc/release-process.md](release-process.md) in the cowrie repository
 under 'Fetch and build inputs' to install sources which require manual intervention. Also follow
 the next step: 'Seed the Gitian sources cache', which will fetch all necessary source files allowing
 for Gitian to work offline.
 
-Building Wuzhucoin
+Building Cowrie
 ----------------
 
-To build Wuzhucoin (for Linux, OS X and Windows) just follow the steps under 'perform
-Gitian builds' in [doc/release-process.md](release-process.md) in the wuzhucoin repository.
+To build Cowrie (for Linux, OS X and Windows) just follow the steps under 'perform
+Gitian builds' in [doc/release-process.md](release-process.md) in the cowrie repository.
 
 This may take a long time as it also builds the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -332,12 +332,12 @@ tail -f var/build.log
 
 Output from `gbuild` will look something like
 
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/wuzhucoin/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/cowrie/.git/
     remote: Reusing existing pack: 35606, done.
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/wuzhucoin-project/wuzhucoin
+    From https://github.com/cowrie-project/cowrie
     ... (new tags, new branch etc)
     --- Building for precise x86_64 ---
     Stopping target if it is up
@@ -363,11 +363,11 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/user/wuzhucoin.git
+URL=https://github.com/user/cowrie.git
 COMMIT=2014_03_windows_unicode_path
-./bin/gbuild --commit wuzhucoin=${COMMIT} --url wuzhucoin=${URL} ../wuzhucoin/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit wuzhucoin=${COMMIT} --url wuzhucoin=${URL} ../wuzhucoin/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit wuzhucoin=${COMMIT} --url wuzhucoin=${URL} ../wuzhucoin/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit cowrie=${COMMIT} --url cowrie=${URL} ../cowrie/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit cowrie=${COMMIT} --url cowrie=${URL} ../cowrie/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit cowrie=${COMMIT} --url cowrie=${URL} ../cowrie/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Signing externally
@@ -382,9 +382,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/wuzhucoin-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/wuzhucoin-build.assert
-    gpg --detach-sign ${VERSION}-osx/${SIGNER}/wuzhucoin-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/cowrie-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/cowrie-build.assert
+    gpg --detach-sign ${VERSION}-osx/${SIGNER}/cowrie-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -394,5 +394,5 @@ Uploading signatures
 ---------------------
 
 After building and signing you can push your signatures (both the `.assert` and `.assert.sig` files) to the
-[wuzhucoin/gitian.sigs](https://github.com/wuzhucoin-project/gitian.sigs.wzc/) repository, or if that's not possible create a pull
+[cowrie/gitian.sigs](https://github.com/cowrie-project/gitian.sigs.cor/) repository, or if that's not possible create a pull
 request. 

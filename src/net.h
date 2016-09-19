@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_NET_H
-#define WUZHUCOIN_NET_H
+#ifndef COWRIE_NET_H
+#define COWRIE_NET_H
 
 #include "bloom.h"
 #include "compat.h"
@@ -623,4 +623,4 @@ public:
     bool Read(CAddrMan& addr);
 };
 
-#endif // WUZHUCOIN_NET_H
+#endif // COWRIE_NET_H

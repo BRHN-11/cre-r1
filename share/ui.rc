@@ -1,4 +1,4 @@
-wuzhucoin               ICON    "pixmaps/wuzhucoin.ico"
+cowrie               ICON    "pixmaps/cowrie.ico"
 
 #include "wx/msw/wx.rc"
 

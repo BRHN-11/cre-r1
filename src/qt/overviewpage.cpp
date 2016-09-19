@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "overviewpage.h"
 #include "ui_overviewpage.h"
 
-#include "wuzhucoinunits.h"
+#include "cowrieunits.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
 #include "guiutil.h"
@@ -24,7 +24,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate(): QAbstractItemDelegate(), unit(WuzhucoinUnits::WZC)
+    TxViewDelegate(): QAbstractItemDelegate(), unit(CowrieUnits::COR)
     {
 
     }
@@ -80,7 +80,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = WuzhucoinUnits::formatWithUnit(unit, amount, true, WuzhucoinUnits::separatorAlways);
+        QString amountText = CowrieUnits::formatWithUnit(unit, amount, true, CowrieUnits::separatorAlways);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -155,14 +155,14 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchOnlyBalance = watchOnlyBalance;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(WuzhucoinUnits::formatWithUnit(unit, balance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelUnconfirmed->setText(WuzhucoinUnits::formatWithUnit(unit, unconfirmedBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelImmature->setText(WuzhucoinUnits::formatWithUnit(unit, immatureBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelTotal->setText(WuzhucoinUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelWatchAvailable->setText(WuzhucoinUnits::formatWithUnit(unit, watchOnlyBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelWatchPending->setText(WuzhucoinUnits::formatWithUnit(unit, watchUnconfBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelWatchImmature->setText(WuzhucoinUnits::formatWithUnit(unit, watchImmatureBalance, false, WuzhucoinUnits::separatorAlways));
-    ui->labelWatchTotal->setText(WuzhucoinUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, WuzhucoinUnits::separatorAlways));
+    ui->labelBalance->setText(CowrieUnits::formatWithUnit(unit, balance, false, CowrieUnits::separatorAlways));
+    ui->labelUnconfirmed->setText(CowrieUnits::formatWithUnit(unit, unconfirmedBalance, false, CowrieUnits::separatorAlways));
+    ui->labelImmature->setText(CowrieUnits::formatWithUnit(unit, immatureBalance, false, CowrieUnits::separatorAlways));
+    ui->labelTotal->setText(CowrieUnits::formatWithUnit(unit, balance + unconfirmedBalance + immatureBalance, false, CowrieUnits::separatorAlways));
+    ui->labelWatchAvailable->setText(CowrieUnits::formatWithUnit(unit, watchOnlyBalance, false, CowrieUnits::separatorAlways));
+    ui->labelWatchPending->setText(CowrieUnits::formatWithUnit(unit, watchUnconfBalance, false, CowrieUnits::separatorAlways));
+    ui->labelWatchImmature->setText(CowrieUnits::formatWithUnit(unit, watchImmatureBalance, false, CowrieUnits::separatorAlways));
+    ui->labelWatchTotal->setText(CowrieUnits::formatWithUnit(unit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, CowrieUnits::separatorAlways));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -228,7 +228,7 @@ void OverviewPage::setWalletModel(WalletModel *model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("WZC")
+    // update the display unit, to not use the default ("COR")
     updateDisplayUnit();
 }
 

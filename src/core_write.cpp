@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,7 +82,7 @@ void ScriptPubKeyToUniv(const CScript& scriptPubKey,
 
     UniValue a(UniValue::VARR);
     BOOST_FOREACH(const CTxDestination& addr, addresses)
-        a.push_back(CWuzhucoinAddress(addr).ToString());
+        a.push_back(CCowrieAddress(addr).ToString());
     out.pushKV("addresses", a);
 }
 

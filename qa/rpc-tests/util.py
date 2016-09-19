@@ -1,14 +1,14 @@
-# Copyright (c) 2014 The Wuzhucoin Core developers
+# Copyright (c) 2014 The Cowrie Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
 # Helpful routines for regression testing
 #
 
-# Add python-wuzhucoinrpc to module search path:
+# Add python-cowrierpc to module search path:
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "python-wuzhucoinrpc"))
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "python-cowrierpc"))
 
 from decimal import Decimal, ROUND_DOWN
 import json
@@ -18,7 +18,7 @@ import subprocess
 import time
 import re
 
-from wuzhucoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+from cowrierpc.authproxy import AuthServiceProxy, JSONRPCException
 from util import *
 
 def p2p_port(n):
@@ -27,7 +27,7 @@ def rpc_port(n):
     return 12000 + n + os.getpid()%999
 
 def check_json_precision():
-    """Make sure json library being used does not lose precision converting WZC values"""
+    """Make sure json library being used does not lose precision converting COR values"""
     n = Decimal("20000000.00000003")
     shells = int(json.loads(json.dumps(float(n)))*1.0e8)
     if shells != 2000000000000003:
@@ -58,13 +58,13 @@ def sync_mempools(rpc_connections):
             break
         time.sleep(1)
 
-wuzhucoind_processes = {}
+cowried_processes = {}
 
 def initialize_datadir(dirname, n):
     datadir = os.path.join(dirname, "node"+str(n))
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "wuzhucoin.conf"), 'w') as f:
+    with open(os.path.join(datadir, "cowrie.conf"), 'w') as f:
         f.write("regtest=1\n");
         f.write("rpcuser=rt\n");
         f.write("rpcpassword=rt\n");
@@ -76,19 +76,19 @@ def initialize_chain(test_dir):
     """
     Create (or copy from cache) a 200-block-long chain and
     4 wallets.
-    wuzhucoind and wuzhucoin-cli must be in search path.
+    cowried and cowrie-cli must be in search path.
     """
 
     if not os.path.isdir(os.path.join("cache", "node0")):
         devnull = open("/dev/null", "w+")
-        # Create cache directories, run wuzhucoinds:
+        # Create cache directories, run cowrieds:
         for i in range(4):
             datadir=initialize_datadir("cache", i)
-            args = [ os.getenv("WUZHUCOIND", "wuzhucoind"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("COWRIED", "cowried"), "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
-            wuzhucoind_processes[i] = subprocess.Popen(args)
-            subprocess.check_call([ os.getenv("WUZHUCOINCLI", "wuzhucoin-cli"), "-datadir="+datadir,
+            cowried_processes[i] = subprocess.Popen(args)
+            subprocess.check_call([ os.getenv("COWRIECLI", "cowrie-cli"), "-datadir="+datadir,
                                     "-rpcwait", "getblockcount"], stdout=devnull)
         devnull.close()
         rpcs = []
@@ -116,7 +116,7 @@ def initialize_chain(test_dir):
 
         # Shut them down, and clean up cache directories:
         stop_nodes(rpcs)
-        wait_wuzhucoinds()
+        wait_cowrieds()
         for i in range(4):
             os.remove(log_filename("cache", i, "debug.log"))
             os.remove(log_filename("cache", i, "db.log"))
@@ -127,7 +127,7 @@ def initialize_chain(test_dir):
         from_dir = os.path.join("cache", "node"+str(i))
         to_dir = os.path.join(test_dir,  "node"+str(i))
         shutil.copytree(from_dir, to_dir)
-        initialize_datadir(test_dir, i) # Overwrite port/rpcport in wuzhucoin.conf
+        initialize_datadir(test_dir, i) # Overwrite port/rpcport in cowrie.conf
 
 def initialize_chain_clean(test_dir, num_nodes):
     """
@@ -160,14 +160,14 @@ def _rpchost_to_args(rpchost):
 
 def start_node(i, dirname, extra_args=None, rpchost=None):
     """
-    Start a wuzhucoind and return RPC connection to it
+    Start a cowried and return RPC connection to it
     """
     datadir = os.path.join(dirname, "node"+str(i))
-    args = [ os.getenv("WUZHUCOIND", "wuzhucoind"), "-datadir="+datadir, "-keypool=1", "-discover=0", "-rest" ]
+    args = [ os.getenv("COWRIED", "cowried"), "-datadir="+datadir, "-keypool=1", "-discover=0", "-rest" ]
     if extra_args is not None: args.extend(extra_args)
-    wuzhucoind_processes[i] = subprocess.Popen(args)
+    cowried_processes[i] = subprocess.Popen(args)
     devnull = open("/dev/null", "w+")
-    subprocess.check_call([ os.getenv("WUZHUCOINCLI", "wuzhucoin-cli"), "-datadir="+datadir] +
+    subprocess.check_call([ os.getenv("COWRIECLI", "cowrie-cli"), "-datadir="+datadir] +
                           _rpchost_to_args(rpchost)  +
                           ["-rpcwait", "getblockcount"], stdout=devnull)
     devnull.close()
@@ -178,7 +178,7 @@ def start_node(i, dirname, extra_args=None, rpchost=None):
 
 def start_nodes(num_nodes, dirname, extra_args=None, rpchost=None):
     """
-    Start multiple wuzhucoinds, return RPC connections to them
+    Start multiple cowrieds, return RPC connections to them
     """
     if extra_args is None: extra_args = [ None for i in range(num_nodes) ]
     return [ start_node(i, dirname, extra_args[i], rpchost) for i in range(num_nodes) ]
@@ -188,8 +188,8 @@ def log_filename(dirname, n_node, logname):
 
 def stop_node(node, i):
     node.stop()
-    wuzhucoind_processes[i].wait()
-    del wuzhucoind_processes[i]
+    cowried_processes[i].wait()
+    del cowried_processes[i]
 
 def stop_nodes(nodes):
     for node in nodes:
@@ -200,11 +200,11 @@ def set_node_times(nodes, t):
     for node in nodes:
         node.setmocktime(t)
 
-def wait_wuzhucoinds():
-    # Wait for all wuzhucoinds to cleanly exit
-    for wuzhucoind in wuzhucoind_processes.values():
-        wuzhucoind.wait()
-    wuzhucoind_processes.clear()
+def wait_cowrieds():
+    # Wait for all cowrieds to cleanly exit
+    for cowried in cowried_processes.values():
+        cowried.wait()
+    cowried_processes.clear()
 
 def connect_nodes(from_connection, node_num):
     ip_port = "127.0.0.1:"+str(p2p_port(node_num))

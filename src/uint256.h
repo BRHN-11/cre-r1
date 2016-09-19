@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_UINT256_H
-#define WUZHUCOIN_UINT256_H
+#ifndef COWRIE_UINT256_H
+#define COWRIE_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -319,7 +319,7 @@ public:
      * Thus 0x1234560000 is compact (0x05123456)
      * and  0xc0de000000 is compact (0x0600c0de)
      * 
-     * Wuzhucoin only uses this "compact" format for encoding difficulty
+     * Cowrie only uses this "compact" format for encoding difficulty
      * targets, which are unsigned 256bit quantities.  Thus, all the
      * complexities of the sign bit and using base 256 are probably an
      * implementation accident.
@@ -330,4 +330,4 @@ public:
     uint64_t GetHash(const uint256& salt) const;
 };
 
-#endif // WUZHUCOIN_UINT256_H
+#endif // COWRIE_UINT256_H

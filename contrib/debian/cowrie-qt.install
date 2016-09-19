@@ -1,0 +1,6 @@
+usr/local/bin/cowrie-qt usr/bin
+share/pixmaps/cowrie32.xpm usr/share/pixmaps
+share/pixmaps/cowrie16.xpm usr/share/pixmaps
+share/pixmaps/cowrie128.png usr/share/pixmaps
+debian/cowrie-qt.desktop usr/share/applications
+debian/cowrie-qt.protocol usr/share/kde4/services/

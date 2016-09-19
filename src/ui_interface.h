@@ -1,10 +1,10 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2012 The Wuzhucoin developers
+// Copyright (c) 2012 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_UI_INTERFACE_H
-#define WUZHUCOIN_UI_INTERFACE_H
+#ifndef COWRIE_UI_INTERFACE_H
+#define COWRIE_UI_INTERFACE_H
 
 #include <stdint.h>
 #include <string>
@@ -112,4 +112,4 @@ inline std::string _(const char* psz)
     return rv ? (*rv) : psz;
 }
 
-#endif // WUZHUCOIN_UI_INTERFACE_H
+#endif // COWRIE_UI_INTERFACE_H

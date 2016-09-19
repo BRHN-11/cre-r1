@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_WALLET_ISMINE_H
-#define WUZHUCOIN_WALLET_ISMINE_H
+#ifndef COWRIE_WALLET_ISMINE_H
+#define COWRIE_WALLET_ISMINE_H
 
 #include "key.h"
 #include "script/standard.h"
@@ -26,4 +26,4 @@ typedef uint8_t isminefilter;
 isminetype IsMine(const CKeyStore& keystore, const CScript& scriptPubKey);
 isminetype IsMine(const CKeyStore& keystore, const CTxDestination& dest);
 
-#endif // WUZHUCOIN_WALLET_ISMINE_H
+#endif // COWRIE_WALLET_ISMINE_H

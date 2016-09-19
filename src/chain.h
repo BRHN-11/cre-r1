@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CHAIN_H
-#define WUZHUCOIN_CHAIN_H
+#ifndef COWRIE_CHAIN_H
+#define COWRIE_CHAIN_H
 
 #include "primitives/block.h"
 #include "pow.h"
@@ -409,4 +409,4 @@ public:
     const CBlockIndex *FindFork(const CBlockIndex *pindex) const;
 };
 
-#endif // WUZHUCOIN_CHAIN_H
+#endif // COWRIE_CHAIN_H

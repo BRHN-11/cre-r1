@@ -1,4 +1,4 @@
-// Copyright (c) 2013 The Wuzhucoin Core developers
+// Copyright (c) 2013 The Cowrie Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -87,10 +87,10 @@ void RunTest(const TestVector &test) {
         key.Encode(data);
         pubkey.Encode(data);
         // Test private key
-        CWuzhucoinExtKey b58key; b58key.SetKey(key);
+        CCowrieExtKey b58key; b58key.SetKey(key);
         BOOST_CHECK(b58key.ToString() == derive.prv);
         // Test public key
-        CWuzhucoinExtPubKey b58pubkey; b58pubkey.SetKey(pubkey);
+        CCowrieExtPubKey b58pubkey; b58pubkey.SetKey(pubkey);
         BOOST_CHECK(b58pubkey.ToString() == derive.pub);
         // Derive new keys
         CExtKey keyNew;

@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_TXDB_H
-#define WUZHUCOIN_TXDB_H
+#ifndef COWRIE_TXDB_H
+#define COWRIE_TXDB_H
 
 #include "leveldbwrapper.h"
 #include "main.h"
@@ -62,4 +62,4 @@ public:
     bool LoadBlockIndexGuts();
 };
 
-#endif // WUZHUCOIN_TXDB_H
+#endif // COWRIE_TXDB_H

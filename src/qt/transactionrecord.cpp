@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,9 +55,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 sub.involvesWatchAddress = mine == ISMINE_WATCH_ONLY;
                 if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address))
                 {
-                    // Received by Wuzhucoin Address
+                    // Received by Cowrie Address
                     sub.type = TransactionRecord::RecvWithAddress;
-                    sub.address = CWuzhucoinAddress(address).ToString();
+                    sub.address = CCowrieAddress(address).ToString();
                 }
                 else
                 {
@@ -127,9 +127,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 CTxDestination address;
                 if (ExtractDestination(txout.scriptPubKey, address))
                 {
-                    // Sent to Wuzhucoin Address
+                    // Sent to Cowrie Address
                     sub.type = TransactionRecord::SendToAddress;
-                    sub.address = CWuzhucoinAddress(address).ToString();
+                    sub.address = CCowrieAddress(address).ToString();
                 }
                 else
                 {

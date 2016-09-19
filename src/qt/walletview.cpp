@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,7 +6,7 @@
 
 #include "addressbookpage.h"
 #include "askpassphrasedialog.h"
-#include "wuzhucoingui.h"
+#include "cowriegui.h"
 #include "clientmodel.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
@@ -78,7 +78,7 @@ WalletView::~WalletView()
 {
 }
 
-void WalletView::setWuzhucoinGUI(WuzhucoinGUI *gui)
+void WalletView::setCowrieGUI(CowrieGUI *gui)
 {
     if (gui)
     {

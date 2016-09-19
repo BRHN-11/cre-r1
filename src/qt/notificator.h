@@ -1,12 +1,12 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_NOTIFICATOR_H
-#define WUZHUCOIN_QT_NOTIFICATOR_H
+#ifndef COWRIE_QT_NOTIFICATOR_H
+#define COWRIE_QT_NOTIFICATOR_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include <QIcon>
@@ -77,4 +77,4 @@ private:
 #endif
 };
 
-#endif // WUZHUCOIN_QT_NOTIFICATOR_H
+#endif // COWRIE_QT_NOTIFICATOR_H

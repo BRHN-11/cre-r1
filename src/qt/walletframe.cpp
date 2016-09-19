@@ -1,10 +1,10 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "walletframe.h"
 
-#include "wuzhucoingui.h"
+#include "cowriegui.h"
 #include "walletview.h"
 
 #include <cstdio>
@@ -12,7 +12,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 
-WalletFrame::WalletFrame(WuzhucoinGUI *_gui) :
+WalletFrame::WalletFrame(CowrieGUI *_gui) :
     QFrame(_gui),
     gui(_gui)
 {
@@ -43,7 +43,7 @@ bool WalletFrame::addWallet(const QString& name, WalletModel *walletModel)
         return false;
 
     WalletView *walletView = new WalletView(this);
-    walletView->setWuzhucoinGUI(gui);
+    walletView->setCowrieGUI(gui);
     walletView->setClientModel(clientModel);
     walletView->setWalletModel(walletModel);
     walletView->showOutOfSyncWarning(bOutOfSync);

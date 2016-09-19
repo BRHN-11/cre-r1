@@ -1,10 +1,10 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_RPCSERVER_H
-#define WUZHUCOIN_RPCSERVER_H
+#ifndef COWRIE_RPCSERVER_H
+#define COWRIE_RPCSERVER_H
 
 #include "amount.h"
 #include "rpcprotocol.h"
@@ -93,7 +93,7 @@ public:
 };
 
 /**
- * Wuzhucoin RPC command dispatcher.
+ * Cowrie RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -231,4 +231,4 @@ extern bool HTTPReq_REST(AcceptedConnection *conn,
                   std::map<std::string, std::string>& mapHeaders,
                   bool fRun);
 
-#endif // WUZHUCOIN_RPCSERVER_H
+#endif // COWRIE_RPCSERVER_H

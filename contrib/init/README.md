@@ -1,9 +1,9 @@
 Sample configuration files for:
 
-SystemD: wuzhucoind.service
-Upstart: wuzhucoind.conf
-OpenRC:  wuzhucoind.openrc
-         wuzhucoind.openrcconf
+SystemD: cowried.service
+Upstart: cowried.conf
+OpenRC:  cowried.openrc
+         cowried.openrcconf
 
 have been made available to assist packagers in creating node packages here.
 

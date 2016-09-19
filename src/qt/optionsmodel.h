@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_OPTIONSMODEL_H
-#define WUZHUCOIN_QT_OPTIONSMODEL_H
+#ifndef COWRIE_QT_OPTIONSMODEL_H
+#define COWRIE_QT_OPTIONSMODEL_H
 
 #include "amount.h"
 
@@ -13,7 +13,7 @@ QT_BEGIN_NAMESPACE
 class QNetworkProxy;
 QT_END_NAMESPACE
 
-/** Interface from Qt to configuration data structure for Wuzhucoin client.
+/** Interface from Qt to configuration data structure for Cowrie client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
    This can be changed to a tree once the settings become sufficiently
@@ -34,7 +34,7 @@ public:
         ProxyUse,               // bool
         ProxyIP,                // QString
         ProxyPort,              // int
-        DisplayUnit,            // WuzhucoinUnits::Unit
+        DisplayUnit,            // CowrieUnits::Unit
         ThirdPartyTxUrls,       // QString
         Language,               // QString
         CoinControlFeatures,    // bool
@@ -86,4 +86,4 @@ signals:
     void coinControlFeaturesChanged(bool);
 };
 
-#endif // WUZHUCOIN_QT_OPTIONSMODEL_H
+#endif // COWRIE_QT_OPTIONSMODEL_H

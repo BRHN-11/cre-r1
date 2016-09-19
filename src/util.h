@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,11 +7,11 @@
  * Server/client environment: argument handling, config file parsing,
  * logging, thread wrappers
  */
-#ifndef WUZHUCOIN_UTIL_H
-#define WUZHUCOIN_UTIL_H
+#ifndef COWRIE_UTIL_H
+#define COWRIE_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "compat.h"
@@ -175,7 +175,7 @@ void RenameThread(const char* name);
  */
 template <typename Callable> void LoopForever(const char* name,  Callable func, int64_t msecs)
 {
-    std::string s = strprintf("wuzhucoin-%s", name);
+    std::string s = strprintf("cowrie-%s", name);
     RenameThread(s.c_str());
     LogPrintf("%s thread start\n", name);
     try
@@ -206,7 +206,7 @@ template <typename Callable> void LoopForever(const char* name,  Callable func, 
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("wuzhucoin-%s", name);
+    std::string s = strprintf("cowrie-%s", name);
     RenameThread(s.c_str());
     try
     {
@@ -229,4 +229,4 @@ template <typename Callable> void TraceThread(const char* name,  Callable func)
     }
 }
 
-#endif // WUZHUCOIN_UTIL_H
+#endif // COWRIE_UTIL_H

@@ -1,5 +1,5 @@
-Building Wuzhucoin
+Building Cowrie
 
-See doc/build-*.md for instructions on building wuzhucoind,
+See doc/build-*.md for instructions on building cowried,
 the intended-for-services, no-graphical-interface, reference
-implementation of Wuzhucoin.
+implementation of Cowrie.

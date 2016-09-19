@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,10 +30,10 @@ SendCoinsEntry::SendCoinsEntry(QWidget *parent) :
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 #endif
 
-    // normal wuzhucoin address field
+    // normal cowrie address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying wuzhucoin address(es)
-    ui->payTo_is->setFont(GUIUtil::wuzhucoinAddressFont());
+    // just a label for displaying cowrie address(es)
+    ui->payTo_is->setFont(GUIUtil::cowrieAddressFont());
 
     // Connect signals
     connect(ui->payAmount, SIGNAL(valueChanged()), this, SIGNAL(payAmountChanged()));
@@ -99,7 +99,7 @@ void SendCoinsEntry::clear()
     ui->memoTextLabel_s->clear();
     ui->payAmount_s->clear();
 
-    // update the display unit, to not use the default ("WZC")
+    // update the display unit, to not use the default ("COR")
     updateDisplayUnit();
 }
 

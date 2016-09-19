@@ -1,24 +1,24 @@
-Wuzhucoin Core integration/staging tree
+Cowrie Core integration/staging tree
 =====================================
 
-https://wuzhucoin.org
+https://cowrie.org
 
-What is Wuzhucoin?
+What is Cowrie?
 ----------------
 
-Wuzhucoin is an experimental new digital currency that enables instant payments to
-anyone, anywhere in the world. Wuzhucoin uses peer-to-peer technology to operate
+Cowrie is an experimental new digital currency that enables instant payments to
+anyone, anywhere in the world. Cowrie uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Wuzhucoin Core is the name of open source
+out collectively by the network. Cowrie Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Wuzhucoin Core software, see https://wuzhucoin.org
+the Cowrie Core software, see https://cowrie.org
 
 License
 -------
 
-Wuzhucoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Cowrie Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see http://opensource.org/licenses/MIT.
 
 Development process
@@ -27,12 +27,12 @@ Development process
 Developers work in their own trees, then submit pull requests when they think
 their feature or bug fix is ready.
 
-If it is a simple/trivial/non-controversial change, then one of the Wuzhucoin
+If it is a simple/trivial/non-controversial change, then one of the Cowrie
 development team members simply pulls it.
 
 If it is a *more complicated or potentially controversial* change, then the patch
 submitter will be asked to start a discussion (if they haven't already) on the
-[mailing list](https://groups.google.com/forum/#!forum/wuzhucoin-dev).
+[mailing list](https://groups.google.com/forum/#!forum/cowrie-dev).
 
 The patch will be accepted if there is broad consensus that it is a good thing.
 Developers should expect to rework and resubmit patches if the code doesn't
@@ -40,8 +40,8 @@ match the project's coding conventions (see [doc/coding.md](doc/coding.md)) or a
 controversial.
 
 The `master-0.10` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/wuzhucoin-project/wuzhucoin/tags) are created
-regularly to indicate new official, stable release versions of Wuzhucoin.
+completely stable. [Tags](https://github.com/cowrie-project/cowrie/tags) are created
+regularly to indicate new official, stable release versions of Cowrie.
 
 Testing
 -------
@@ -55,7 +55,7 @@ lots of money.
 
 Large changes should have a test plan, and should be tested by somebody other
 than the developer who wrote the code.
-Creating a thread in the [Wuzhucoin discussion forum](https://wuzhucointalk.org/index.php?board=2.0) will allow the Wuzhucoin
+Creating a thread in the [Cowrie discussion forum](https://cowrietalk.org/index.php?board=2.0) will allow the Cowrie
 development team members to review your proposal and to provide assistance with creating a test plan. 
 
 
@@ -65,8 +65,8 @@ Translations
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
-We only accept translation fixes that are submitted through [Wuzhucoin Core's Transifex page](https://www.transifex.com/projects/p/wuzhucoin/).
-Translations are converted to Wuzhucoin periodically.
+We only accept translation fixes that are submitted through [Cowrie Core's Transifex page](https://www.transifex.com/projects/p/cowrie/).
+Translations are converted to Cowrie periodically.
 
 Development tips and tricks
 ---------------------------
@@ -89,7 +89,7 @@ to see it.
 
 **testnet and regtest modes**
 
-Run with the -testnet option to run with "play wuzhucoins" on the test network, if you
+Run with the -testnet option to run with "play cowries" on the test network, if you
 are testing multi-machine code that needs to operate across the internet.
 
 If you are testing something that can run on one machine, run with the -regtest option.
@@ -98,7 +98,7 @@ that run in -regtest mode.
 
 **DEBUG_LOCKORDER**
 
-Wuzhucoin Core is a multithreaded application, and deadlocks or other multithreading bugs
+Cowrie Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.

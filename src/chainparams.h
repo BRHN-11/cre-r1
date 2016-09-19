@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CHAINPARAMS_H
-#define WUZHUCOIN_CHAINPARAMS_H
+#ifndef COWRIE_CHAINPARAMS_H
+#define COWRIE_CHAINPARAMS_H
 
 #include "chainparamsbase.h"
 #include "checkpoints.h"
@@ -23,7 +23,7 @@ struct CDNSSeedData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Wuzhucoin system. There are three: the main network on which people trade goods
+ * Cowrie system. There are three: the main network on which people trade goods
  * and services, the public test network which gets reset from time to time and
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
@@ -52,7 +52,7 @@ public:
     int RejectBlockOutdatedMajority() const { return nRejectBlockOutdatedMajority; }
     int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
 
-    /** Used if GenerateWuzhucoins is called with a negative number of threads */
+    /** Used if GenerateCowries is called with a negative number of threads */
     int DefaultMinerThreads() const { return nMinerThreads; }
     const CBlock& GenesisBlock() const { return genesis; }
     bool RequireRPCPassword() const { return fRequireRPCPassword; }
@@ -81,7 +81,7 @@ public:
     const std::vector<CAddress>& FixedSeeds() const { return vFixedSeeds; }
     virtual const Checkpoints::CCheckpointData& Checkpoints() const = 0;
 
-    // Wuzhucoin: Height to enforce v2 block
+    // Cowrie: Height to enforce v2 block
     int EnforceV2AfterHeight() const { return nEnforceV2AfterHeight; }
 protected:
     CChainParams() {}
@@ -115,7 +115,7 @@ protected:
     bool fSkipProofOfWorkCheck;
     bool fTestnetToBeDeprecatedFieldRPC;
 
-    // Wuzhucoin: Height to enforce v2 blocks
+    // Cowrie: Height to enforce v2 blocks
     int nEnforceV2AfterHeight;
 };
 
@@ -159,4 +159,4 @@ void SelectParams(CBaseChainParams::Network network);
  */
 bool SelectParamsFromCommandLine();
 
-#endif // WUZHUCOIN_CHAINPARAMS_H
+#endif // COWRIE_CHAINPARAMS_H

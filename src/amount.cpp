@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,5 +31,5 @@ CAmount CFeeRate::GetFee(size_t nSize) const
 
 std::string CFeeRate::ToString() const
 {
-    return strprintf("%d.%08d WZC/kB", nshellsPerK / COIN, nshellsPerK % COIN);
+    return strprintf("%d.%08d COR/kB", nshellsPerK / COIN, nshellsPerK % COIN);
 }

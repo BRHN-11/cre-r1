@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -244,7 +244,7 @@ public:
             }
             BOOST_FOREACH(const CTxMemPoolEntry* entry, e)
             {
-                // Fees are stored and reported as WZC-per-kb:
+                // Fees are stored and reported as COR-per-kb:
                 CFeeRate feeRate(entry->GetFee(), entry->GetTxSize());
                 double dPriority = entry->GetPriority(entry->GetHeight()); // Want priority when it went IN
                 seenTxConfirm(feeRate, minRelayFee, dPriority, i);

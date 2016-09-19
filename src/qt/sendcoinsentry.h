@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_SENDCOINSENTRY_H
-#define WUZHUCOIN_QT_SENDCOINSENTRY_H
+#ifndef COWRIE_QT_SENDCOINSENTRY_H
+#define COWRIE_QT_SENDCOINSENTRY_H
 
 #include "walletmodel.h"
 
@@ -16,7 +16,7 @@ namespace Ui {
 }
 
 /**
- * A single entry in the dialog for sending wuzhucoins.
+ * A single entry in the dialog for sending cowries.
  * Stacked widget, with different UIs for payment requests
  * with a strong payee identity.
  */
@@ -67,4 +67,4 @@ private:
     bool updateLabel(const QString &address);
 };
 
-#endif // WUZHUCOIN_QT_SENDCOINSENTRY_H
+#endif // COWRIE_QT_SENDCOINSENTRY_H

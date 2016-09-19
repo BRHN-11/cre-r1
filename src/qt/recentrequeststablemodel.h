@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_RECENTREQUESTSTABLEMODEL_H
-#define WUZHUCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef COWRIE_QT_RECENTREQUESTSTABLEMODEL_H
+#define COWRIE_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include "walletmodel.h"
 
@@ -53,7 +53,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / wuzhucoin: URIs.
+/** Model for list of recently generated payment requests / cowrie: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -105,4 +105,4 @@ private:
     QString getAmountTitle();
 };
 
-#endif // WUZHUCOIN_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // COWRIE_QT_RECENTREQUESTSTABLEMODEL_H

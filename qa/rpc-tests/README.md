@@ -1,9 +1,9 @@
 Regression tests of RPC interface
 =================================
 
-### [python-wuzhucoinrpc](https://github.com/jgarzik/python-wuzhucoinrpc)
-Git subtree of [https://github.com/jgarzik/python-wuzhucoinrpc](https://github.com/jgarzik/python-wuzhucoinrpc).
-Changes to python-wuzhucoinrpc should be made upstream, and then
+### [python-cowrierpc](https://github.com/jgarzik/python-cowrierpc)
+Git subtree of [https://github.com/jgarzik/python-cowrierpc](https://github.com/jgarzik/python-cowrierpc).
+Changes to python-cowrierpc should be made upstream, and then
 pulled here using git subtree.
 
 ### [test_framework.py](test_framework.py)
@@ -28,7 +28,7 @@ Notes
 A 200-block -regtest blockchain and wallets for four nodes
 is created the first time a regression test is run and
 is stored in the cache/ directory. Each node has 25 mature
-blocks (25*50=1250 WZC) in their wallet.
+blocks (25*50=1250 COR) in their wallet.
 
 After the first run, the cache/ blockchain and wallets are
 copied into a temporary directory and used as the initial
@@ -39,5 +39,5 @@ to recover with:
 
 ```bash
 rm -rf cache
-killall wuzhucoind
+killall cowried
 ```

@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_TEST_URITESTS_H
-#define WUZHUCOIN_QT_TEST_URITESTS_H
+#ifndef COWRIE_QT_TEST_URITESTS_H
+#define COWRIE_QT_TEST_URITESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -16,4 +16,4 @@ private slots:
     void uriTests();
 };
 
-#endif // WUZHUCOIN_QT_TEST_URITESTS_H
+#endif // COWRIE_QT_TEST_URITESTS_H

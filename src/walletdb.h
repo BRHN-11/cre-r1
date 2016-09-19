@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_WALLETDB_H
-#define WUZHUCOIN_WALLETDB_H
+#ifndef COWRIE_WALLETDB_H
+#define COWRIE_WALLETDB_H
 
 #include "amount.h"
 #include "db.h"
@@ -139,4 +139,4 @@ private:
 
 bool BackupWallet(const CWallet& wallet, const std::string& strDest);
 
-#endif // WUZHUCOIN_WALLETDB_H
+#endif // COWRIE_WALLETDB_H

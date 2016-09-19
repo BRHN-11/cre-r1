@@ -1,16 +1,16 @@
-// Copyright (c) 2014 The Wuzhucoin developers
+// Copyright (c) 2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CHAINPARAMSBASE_H
-#define WUZHUCOIN_CHAINPARAMSBASE_H
+#ifndef COWRIE_CHAINPARAMSBASE_H
+#define COWRIE_CHAINPARAMSBASE_H
 
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between wuzhucoin-cli and wuzhucoind)
- * of a given instance of the Wuzhucoin system.
+ * CBaseChainParams defines the base parameters (shared between cowrie-cli and cowried)
+ * of a given instance of the Cowrie system.
  */
 class CBaseChainParams
 {
@@ -62,4 +62,4 @@ bool SelectBaseParamsFromCommandLine();
  */
 bool AreBaseParamsConfigured();
 
-#endif // WUZHUCOIN_CHAINPARAMSBASE_H
+#endif // COWRIE_CHAINPARAMSBASE_H

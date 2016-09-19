@@ -1,14 +1,14 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "optionsmodel.h"
 
-#include "wuzhucoinunits.h"
+#include "cowrieunits.h"
 #include "guiutil.h"
 
 #include "amount.h"
@@ -58,7 +58,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", WuzhucoinUnits::WZC);
+        settings.setValue("nDisplayUnit", CowrieUnits::COR);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))

@@ -1,10 +1,10 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_ALERT_H
-#define WUZHUCOIN_ALERT_H
+#ifndef COWRIE_ALERT_H
+#define COWRIE_ALERT_H
 
 #include "serialize.h"
 #include "sync.h"
@@ -110,4 +110,4 @@ public:
     static CAlert getAlertByHash(const uint256 &hash);
 };
 
-#endif // WUZHUCOIN_ALERT_H
+#endif // COWRIE_ALERT_H

@@ -1,24 +1,24 @@
-Wuzhucoin version 0.7.0 is now available for download at:
-  http://sourceforge.net/projects/wuzhucoin/files/Wuzhucoin/wuzhucoin-0.7.0/
+Cowrie version 0.7.0 is now available for download at:
+  http://sourceforge.net/projects/cowrie/files/Cowrie/cowrie-0.7.0/
 
-We recommend that everybody running prior versions of wuzhucoind/Wuzhucoin-Qt
+We recommend that everybody running prior versions of cowried/Cowrie-Qt
 upgrade to this release, except for users running Mac OSX 10.5.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/wuzhucoin/wuzhucoin/issues
+  https://github.com/cowrie/cowrie/issues
 
 Project source code is hosted at github; you can get
 source-only tarballs/zipballs directly from there:
-  https://github.com/wuzhucoin/wuzhucoin/tarball/v0.7.0  # .tar.gz
-  https://github.com/wuzhucoin/wuzhucoin/zipball/v0.7.0  # .zip
+  https://github.com/cowrie/cowrie/tarball/v0.7.0  # .tar.gz
+  https://github.com/cowrie/cowrie/zipball/v0.7.0  # .zip
 
 Ubuntu Linux users can use the "Personal Package Archive" (PPA)
 maintained by Matt Corallo to automatically keep 
-wuzhucoin up-to-date.  Just type
-  sudo apt-add-repository ppa:wuzhucoin/wuzhucoin
+cowrie up-to-date.  Just type
+  sudo apt-add-repository ppa:cowrie/cowrie
   sudo apt-get update
-in your terminal, then install the wuzhucoin-qt package:
-  sudo apt-get install wuzhucoin-qt
+in your terminal, then install the cowrie-qt package:
+  sudo apt-get install cowrie-qt
 
 
 How to Upgrade
@@ -27,10 +27,10 @@ If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
 Code:
-/Applications/Wuzhucoin-Qt
+/Applications/Cowrie-Qt
 (on Mac) or
 Code:
-wuzhucoind/wuzhucoin-qt
+cowried/cowrie-qt
 (on Linux).
 
 If you were running on Linux with a version that might have been compiled
@@ -45,14 +45,14 @@ Incompatible Changes
   and 'getrawmempool' commands.
 * Remove deprecated RPC 'getblocknumber'
 
-Wuzhucoin Improvement Proposals implemented
+Cowrie Improvement Proposals implemented
 
 BIP 22 - 'getblocktemplate', 'submitblock' RPCs
 BIP 34 - block version 2, height in coinbase
 BIP 35 - 'mempool' message, extended 'getdata' message behavior
 
 
-Core wuzhucoin handling and blockchain database
+Core cowrie handling and blockchain database
 
 * Reduced CPU usage, by eliminating some redundant hash calculations
 * Cache signature verifications, to eliminate redundant signature checks
@@ -109,7 +109,7 @@ Qt GUI
 * Add 2 labels to the overviewpage that display Wallet and Transaction status (obsolete or current)
 * Extend the optionsdialog (e.g. language selection) and re-work it to a tabbed UI
 * Merge sign/verify message into a single window with tabbed UI
-* Ensure a changed wuzhucoin unit immediately updates all GUI elements that use units
+* Ensure a changed cowrie unit immediately updates all GUI elements that use units
 * Update QR Code dialog
 * Improve error reporting at startup
 * Fine-grained UI updates for a much smoother UI during block downloads
@@ -119,8 +119,8 @@ Qt GUI
 * Much better translations
 * Override progress bar design on platforms with segmented progress bars to assist with readability
 * Added 'immature balance' display on the overview page
-* (Windows only): enable ASLR and DEP for wuzhucoin-qt.exe
-* (Windows only): add meta-data to wuzhucoin-qt.exe (e.g. description)
+* (Windows only): enable ASLR and DEP for cowrie-qt.exe
+* (Windows only): add meta-data to cowrie-qt.exe (e.g. description)
 
 Internal codebase
 
@@ -131,7 +131,7 @@ Internal codebase
 Miscellaneous
 
 * Reopen debug.log upon SIGHUP
-* Bash programmable completion for wuzhucoind(1)
+* Bash programmable completion for cowried(1)
 * On supported OS's, each thread is given a useful name
 
 

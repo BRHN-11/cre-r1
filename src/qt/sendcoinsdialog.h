@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_SENDCOINSDIALOG_H
-#define WUZHUCOIN_QT_SENDCOINSDIALOG_H
+#ifndef COWRIE_QT_SENDCOINSDIALOG_H
+#define COWRIE_QT_SENDCOINSDIALOG_H
 
 #include "walletmodel.h"
 
@@ -23,7 +23,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending wuzhucoins */
+/** Dialog for sending cowries */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -96,4 +96,4 @@ signals:
     void message(const QString &title, const QString &message, unsigned int style);
 };
 
-#endif // WUZHUCOIN_QT_SENDCOINSDIALOG_H
+#endif // COWRIE_QT_SENDCOINSDIALOG_H

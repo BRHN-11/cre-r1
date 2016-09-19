@@ -1,4 +1,4 @@
-// Copyright (c) 2014 The Wuzhucoin developers
+// Copyright (c) 2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -203,13 +203,13 @@ int CBase58Data::CompareTo(const CBase58Data& b58) const
 
 namespace
 {
-class CWuzhucoinAddressVisitor : public boost::static_visitor<bool>
+class CCowrieAddressVisitor : public boost::static_visitor<bool>
 {
 private:
-    CWuzhucoinAddress* addr;
+    CCowrieAddress* addr;
 
 public:
-    CWuzhucoinAddressVisitor(CWuzhucoinAddress* addrIn) : addr(addrIn) {}
+    CCowrieAddressVisitor(CCowrieAddress* addrIn) : addr(addrIn) {}
 
     bool operator()(const CKeyID& id) const { return addr->Set(id); }
     bool operator()(const CScriptID& id) const { return addr->Set(id); }
@@ -218,29 +218,29 @@ public:
 
 } // anon namespace
 
-bool CWuzhucoinAddress::Set(const CKeyID& id)
+bool CCowrieAddress::Set(const CKeyID& id)
 {
     SetData(Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS), &id, 20);
     return true;
 }
 
-bool CWuzhucoinAddress::Set(const CScriptID& id)
+bool CCowrieAddress::Set(const CScriptID& id)
 {
     SetData(Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS), &id, 20);
     return true;
 }
 
-bool CWuzhucoinAddress::Set(const CTxDestination& dest)
+bool CCowrieAddress::Set(const CTxDestination& dest)
 {
-    return boost::apply_visitor(CWuzhucoinAddressVisitor(this), dest);
+    return boost::apply_visitor(CCowrieAddressVisitor(this), dest);
 }
 
-bool CWuzhucoinAddress::IsValid() const
+bool CCowrieAddress::IsValid() const
 {
     return IsValid(Params());
 }
 
-bool CWuzhucoinAddress::IsValid(const CChainParams& params) const
+bool CCowrieAddress::IsValid(const CChainParams& params) const
 {
     bool fCorrectSize = vchData.size() == 20;
     bool fKnownVersion = vchVersion == params.Base58Prefix(CChainParams::PUBKEY_ADDRESS) ||
@@ -248,7 +248,7 @@ bool CWuzhucoinAddress::IsValid(const CChainParams& params) const
     return fCorrectSize && fKnownVersion;
 }
 
-CTxDestination CWuzhucoinAddress::Get() const
+CTxDestination CCowrieAddress::Get() const
 {
     if (!IsValid())
         return CNoDestination();
@@ -262,7 +262,7 @@ CTxDestination CWuzhucoinAddress::Get() const
         return CNoDestination();
 }
 
-bool CWuzhucoinAddress::GetKeyID(CKeyID& keyID) const
+bool CCowrieAddress::GetKeyID(CKeyID& keyID) const
 {
     if (!IsValid() || vchVersion != Params().Base58Prefix(CChainParams::PUBKEY_ADDRESS))
         return false;
@@ -272,12 +272,12 @@ bool CWuzhucoinAddress::GetKeyID(CKeyID& keyID) const
     return true;
 }
 
-bool CWuzhucoinAddress::IsScript() const
+bool CCowrieAddress::IsScript() const
 {
     return IsValid() && vchVersion == Params().Base58Prefix(CChainParams::SCRIPT_ADDRESS);
 }
 
-void CWuzhucoinSecret::SetKey(const CKey& vchSecret)
+void CCowrieSecret::SetKey(const CKey& vchSecret)
 {
     assert(vchSecret.IsValid());
     SetData(Params().Base58Prefix(CChainParams::SECRET_KEY), vchSecret.begin(), vchSecret.size());
@@ -285,7 +285,7 @@ void CWuzhucoinSecret::SetKey(const CKey& vchSecret)
         vchData.push_back(1);
 }
 
-CKey CWuzhucoinSecret::GetKey()
+CKey CCowrieSecret::GetKey()
 {
     CKey ret;
     assert(vchData.size() >= 32);
@@ -293,19 +293,19 @@ CKey CWuzhucoinSecret::GetKey()
     return ret;
 }
 
-bool CWuzhucoinSecret::IsValid() const
+bool CCowrieSecret::IsValid() const
 {
     bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
     bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
     return fExpectedFormat && fCorrectVersion;
 }
 
-bool CWuzhucoinSecret::SetString(const char* pszSecret)
+bool CCowrieSecret::SetString(const char* pszSecret)
 {
     return CBase58Data::SetString(pszSecret) && IsValid();
 }
 
-bool CWuzhucoinSecret::SetString(const std::string& strSecret)
+bool CCowrieSecret::SetString(const std::string& strSecret)
 {
     return SetString(strSecret.c_str());
 }

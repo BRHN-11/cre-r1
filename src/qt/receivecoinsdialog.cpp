@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +7,7 @@
 
 #include "addressbookpage.h"
 #include "addresstablemodel.h"
-#include "wuzhucoinunits.h"
+#include "cowrieunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "receiverequestdialog.h"

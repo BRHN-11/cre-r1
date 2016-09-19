@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2014 The Wuzhucoin Core developers
+# Copyright (c) 2014 The Cowrie Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,14 +18,14 @@
 if [ $# -lt 1 ]; then
         echo "Usage: $0 path_to_binaries"
         echo "e.g. $0 ../../src"
-        echo "Env vars WUZHUCOIND and WUZHUCOINCLI may be used to specify the exact binaries used"
+        echo "Env vars COWRIED and COWRIECLI may be used to specify the exact binaries used"
         exit 1
 fi
 
 set -f
 
-WUZHUCOIND=${WUZHUCOIND:-${1}/wuzhucoind}
-CLI=${WUZHUCOINCLI:-${1}/wuzhucoin-cli}
+COWRIED=${COWRIED:-${1}/cowried}
+CLI=${COWRIECLI:-${1}/cowrie-cli}
 
 DIR="${BASH_SOURCE%/*}"
 SENDANDWAIT="${DIR}/send.sh"
@@ -40,13 +40,13 @@ D=$(mktemp -d test.XXXXX)
 D1=${D}/node1
 CreateDataDir $D1 port=11000 rpcport=11001
 B1ARGS="-datadir=$D1 -debug=mempool"
-$WUZHUCOIND $B1ARGS &
+$COWRIED $B1ARGS &
 B1PID=$!
 
 D2=${D}/node2
 CreateDataDir $D2 port=11010 rpcport=11011
 B2ARGS="-datadir=$D2 -debug=mempool"
-$WUZHUCOIND $B2ARGS &
+$COWRIED $B2ARGS &
 B2PID=$!
 
 # Wait until all four nodes are at the same block number
@@ -97,7 +97,7 @@ CheckBalance "$B2ARGS" 0
 # restart B2 with no connection
 $CLI $B2ARGS stop > /dev/null 2>&1
 wait $B2PID
-$WUZHUCOIND $B2ARGS &
+$COWRIED $B2ARGS &
 B2PID=$!
 
 B1ADDRESS=$( $CLI $B1ARGS getnewaddress )

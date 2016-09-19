@@ -1,9 +1,9 @@
-// Copyright (c) 2014 The Wuzhucoin developers
+// Copyright (c) 2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CRYPTO_RIPEMD160_H
-#define WUZHUCOIN_CRYPTO_RIPEMD160_H
+#ifndef COWRIE_CRYPTO_RIPEMD160_H
+#define COWRIE_CRYPTO_RIPEMD160_H
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -25,4 +25,4 @@ public:
     CRIPEMD160& Reset();
 };
 
-#endif // WUZHUCOIN_CRYPTO_RIPEMD160_H
+#endif // COWRIE_CRYPTO_RIPEMD160_H

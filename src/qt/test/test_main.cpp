@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "util.h"
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     // Don't remove this, it's needed to access
     // QCoreApplication:: in the tests
     QCoreApplication app(argc, argv);
-    app.setApplicationName("Wuzhucoin-Qt-test");
+    app.setApplicationName("Cowrie-Qt-test");
 
     URITests test1;
     if (QTest::qExec(&test1) != 0)

@@ -1,9 +1,9 @@
-// Copyright (c) 2012 The Wuzhucoin developers
+// Copyright (c) 2012 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_MRUSET_H
-#define WUZHUCOIN_MRUSET_H
+#ifndef COWRIE_MRUSET_H
+#define COWRIE_MRUSET_H
 
 #include <deque>
 #include <set>
@@ -66,4 +66,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_MRUSET_H
+#endif // COWRIE_MRUSET_H

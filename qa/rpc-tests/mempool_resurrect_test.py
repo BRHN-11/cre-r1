@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-# Copyright (c) 2014 The Wuzhucoin Core developers
+# Copyright (c) 2014 The Cowrie Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,14 +8,14 @@
 # the blockchain is re-organized.
 #
 
-from test_framework import WuzhucoinTestFramework
-from wuzhucoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+from test_framework import CowrieTestFramework
+from cowrierpc.authproxy import AuthServiceProxy, JSONRPCException
 from util import *
 import os
 import shutil
 
 # Create one-input, one-output, no-fee transaction:
-class MempoolCoinbaseTest(WuzhucoinTestFramework):
+class MempoolCoinbaseTest(CowrieTestFramework):
 
     def setup_network(self):
         # Just need one node for this test

@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2014 The Wuzhucoin developers
+// Copyright (c) 2012-2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CHECKQUEUE_H
-#define WUZHUCOIN_CHECKQUEUE_H
+#ifndef COWRIE_CHECKQUEUE_H
+#define COWRIE_CHECKQUEUE_H
 
 #include <algorithm>
 #include <vector>
@@ -212,4 +212,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_CHECKQUEUE_H
+#endif // COWRIE_CHECKQUEUE_H

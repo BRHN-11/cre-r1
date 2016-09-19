@@ -1,14 +1,14 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_WALLETFRAME_H
-#define WUZHUCOIN_QT_WALLETFRAME_H
+#ifndef COWRIE_QT_WALLETFRAME_H
+#define COWRIE_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
 
-class WuzhucoinGUI;
+class CowrieGUI;
 class ClientModel;
 class SendCoinsRecipient;
 class WalletModel;
@@ -23,7 +23,7 @@ class WalletFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit WalletFrame(WuzhucoinGUI *_gui = 0);
+    explicit WalletFrame(CowrieGUI *_gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel *clientModel);
@@ -39,7 +39,7 @@ public:
 
 private:
     QStackedWidget *walletStack;
-    WuzhucoinGUI *gui;
+    CowrieGUI *gui;
     ClientModel *clientModel;
     QMap<QString, WalletView*> mapWalletViews;
 
@@ -77,4 +77,4 @@ public slots:
     void usedReceivingAddresses();
 };
 
-#endif // WUZHUCOIN_QT_WALLETFRAME_H
+#endif // COWRIE_QT_WALLETFRAME_H

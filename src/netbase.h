@@ -1,12 +1,12 @@
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_NETBASE_H
-#define WUZHUCOIN_NETBASE_H
+#ifndef COWRIE_NETBASE_H
+#define COWRIE_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "compat.h"
@@ -193,4 +193,4 @@ bool CloseSocket(SOCKET& hSocket);
 /** Disable or enable blocking-mode for a socket */
 bool SetSocketNonBlocking(SOCKET& hSocket, bool fNonBlocking);
 
-#endif // WUZHUCOIN_NETBASE_H
+#endif // COWRIE_NETBASE_H

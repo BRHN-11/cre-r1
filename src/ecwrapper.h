@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_ECWRAPPER_H
-#define WUZHUCOIN_ECWRAPPER_H
+#ifndef COWRIE_ECWRAPPER_H
+#define COWRIE_ECWRAPPER_H
 
 #include <cstddef>
 #include <vector>
@@ -37,4 +37,4 @@ public:
     static bool SanityCheck();
 };
 
-#endif // WUZHUCOIN_ECWRAPPER_H
+#endif // COWRIE_ECWRAPPER_H

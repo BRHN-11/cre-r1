@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "guiutil.h"
 
-#include "wuzhucoinaddressvalidator.h"
-#include "wuzhucoinunits.h"
+#include "cowrieaddressvalidator.h"
+#include "cowrieunits.h"
 #include "qvalidatedlineedit.h"
 #include "walletmodel.h"
 
@@ -87,7 +87,7 @@ QString dateTimeStr(qint64 nTime)
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
 }
 
-QFont wuzhucoinAddressFont()
+QFont cowrieAddressFont()
 {
     QFont font("Monospace");
 #if QT_VERSION >= 0x040800
@@ -102,14 +102,14 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 {
     parent->setFocusProxy(widget);
 
-    widget->setFont(wuzhucoinAddressFont());
+    widget->setFont(cowrieAddressFont());
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Wuzhucoin address (e.g. %1)").arg("Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2"));
+    widget->setPlaceholderText(QObject::tr("Enter a Cowrie address (e.g. %1)").arg("Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2"));
 #endif
-    widget->setValidator(new WuzhucoinAddressEntryValidator(parent));
-    widget->setCheckValidator(new WuzhucoinAddressCheckValidator(parent));
+    widget->setValidator(new CowrieAddressEntryValidator(parent));
+    widget->setCheckValidator(new CowrieAddressCheckValidator(parent));
 }
 
 void setupAmountWidget(QLineEdit *widget, QWidget *parent)
@@ -121,10 +121,10 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseWuzhucoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseCowrieURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no wuzhucoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("wuzhucoin"))
+    // return if URI is not valid or is no cowrie: URI
+    if(!uri.isValid() || uri.scheme() != QString("cowrie"))
         return false;
 
     SendCoinsRecipient rv;
@@ -164,7 +164,7 @@ bool parseWuzhucoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!WuzhucoinUnits::parse(WuzhucoinUnits::WZC, i->second, &rv.amount))
+                if(!CowrieUnits::parse(CowrieUnits::COR, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -182,28 +182,28 @@ bool parseWuzhucoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseWuzhucoinURI(QString uri, SendCoinsRecipient *out)
+bool parseCowrieURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert wuzhucoin:// to wuzhucoin:
+    // Convert cowrie:// to cowrie:
     //
-    //    Cannot handle this later, because wuzhucoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because cowrie:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("wuzhucoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("cowrie://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 11, "wuzhucoin:");
+        uri.replace(0, 11, "cowrie:");
     }
     QUrl uriInstance(uri);
-    return parseWuzhucoinURI(uriInstance, out);
+    return parseCowrieURI(uriInstance, out);
 }
 
-QString formatWuzhucoinURI(const SendCoinsRecipient &info)
+QString formatCowrieURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("wuzhucoin:%1").arg(info.address);
+    QString ret = QString("cowrie:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(WuzhucoinUnits::format(WuzhucoinUnits::WZC, info.amount, false, WuzhucoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(CowrieUnits::format(CowrieUnits::COR, info.amount, false, CowrieUnits::separatorNever));
         paramCount++;
     }
 
@@ -226,7 +226,7 @@ QString formatWuzhucoinURI(const SendCoinsRecipient &info)
 
 bool isDust(const QString& address, const CAmount& amount)
 {
-    CTxDestination dest = CWuzhucoinAddress(address.toStdString()).Get();
+    CTxDestination dest = CCowrieAddress(address.toStdString()).Get();
     CScript script = GetScriptForDestination(dest);
     CTxOut txOut(amount, script);
     return txOut.IsDust(::minRelayTxFee);
@@ -567,12 +567,12 @@ TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* t
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Wuzhucoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "Cowrie.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Wuzhucoin.lnk
+    // check for Cowrie.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -649,7 +649,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "wuzhucoin.desktop";
+    return GetAutostartDir() / "cowrie.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -687,10 +687,10 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out|std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a wuzhucoin.desktop file to the autostart directory:
+        // Write a cowrie.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Wuzhucoin\n";
+        optionFile << "Name=Cowrie\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -709,7 +709,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the wuzhucoin app
+    // loop through the list of startup items and try to find the cowrie app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -730,21 +730,21 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
 
 bool GetStartOnSystemStartup()
 {
-    CFURLRef wuzhucoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    CFURLRef cowrieAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
     LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, wuzhucoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, cowrieAppUrl);
     return !!foundItem; // return boolified object
 }
 
 bool SetStartOnSystemStartup(bool fAutoStart)
 {
-    CFURLRef wuzhucoinAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    CFURLRef cowrieAppUrl = CFBundleCopyBundleURL(CFBundleGetMainBundle());
     LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, wuzhucoinAppUrl);
+    LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, cowrieAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add wuzhucoin app to startup item list
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, wuzhucoinAppUrl, NULL, NULL);
+        // add cowrie app to startup item list
+        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, cowrieAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {
         // remove item

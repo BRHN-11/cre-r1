@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_WALLETMODEL_H
-#define WUZHUCOIN_QT_WALLETMODEL_H
+#ifndef COWRIE_QT_WALLETMODEL_H
+#define COWRIE_QT_WALLETMODEL_H
 
 #include "paymentrequestplus.h"
 #include "walletmodeltransaction.h"
@@ -92,7 +92,7 @@ public:
     }
 };
 
-/** Interface to Wuzhucoin wallet from Qt view code. */
+/** Interface to Cowrie wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -262,4 +262,4 @@ public slots:
     void pollBalanceChanged();
 };
 
-#endif // WUZHUCOIN_QT_WALLETMODEL_H
+#endif // COWRIE_QT_WALLETMODEL_H

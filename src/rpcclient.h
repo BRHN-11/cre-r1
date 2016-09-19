@@ -1,10 +1,10 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_RPCCLIENT_H
-#define WUZHUCOIN_RPCCLIENT_H
+#ifndef COWRIE_RPCCLIENT_H
+#define COWRIE_RPCCLIENT_H
 
 #include "json/json_spirit_reader_template.h"
 #include "json/json_spirit_utils.h"
@@ -12,4 +12,4 @@
 
 json_spirit::Array RPCConvertValues(const std::string& strMethod, const std::vector<std::string>& strParams);
 
-#endif // WUZHUCOIN_RPCCLIENT_H
+#endif // COWRIE_RPCCLIENT_H

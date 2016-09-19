@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_UTILTIME_H
-#define WUZHUCOIN_UTILTIME_H
+#ifndef COWRIE_UTILTIME_H
+#define COWRIE_UTILTIME_H
 
 #include <stdint.h>
 #include <string>
@@ -17,4 +17,4 @@ void MilliSleep(int64_t n);
 
 std::string DateTimeStrFormat(const char* pszFormat, int64_t nTime);
 
-#endif // WUZHUCOIN_UTILTIME_H
+#endif // COWRIE_UTILTIME_H

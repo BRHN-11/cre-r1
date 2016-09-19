@@ -1,19 +1,19 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CLIENTVERSION_H
-#define WUZHUCOIN_CLIENTVERSION_H
+#ifndef COWRIE_CLIENTVERSION_H
+#define COWRIE_CLIENTVERSION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #else
 
 /**
  * client versioning and copyright year
  */
 
-//! These need to be macros, as clientversion.cpp's and wuzhucoin*-res.rc's voodoo requires it
+//! These need to be macros, as clientversion.cpp's and cowrie*-res.rc's voodoo requires it
 #define CLIENT_VERSION_MAJOR 0
 #define CLIENT_VERSION_MINOR 10
 #define CLIENT_VERSION_REVISION 4
@@ -38,10 +38,10 @@
 #define DO_STRINGIZE(X) #X
 
 //! Copyright string used in Windows .rc files
-#define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Wuzhucoin Core Developers"
+#define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Cowrie Core Developers"
 
 /**
- * wuzhucoind-res.rc includes this file, but it cannot cope with real c++ code.
+ * cowried-res.rc includes this file, but it cannot cope with real c++ code.
  * WINDRES_PREPROC is defined to indicate that its pre-processor is running.
  * Anything other than a define should be guarded below.
  */
@@ -67,4 +67,4 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
 
 #endif // WINDRES_PREPROC
 
-#endif // WUZHUCOIN_CLIENTVERSION_H
+#endif // COWRIE_CLIENTVERSION_H

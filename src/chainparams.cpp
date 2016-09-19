@@ -1,5 +1,5 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -83,7 +83,7 @@ static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest,
         //0,
         //0,
-        //0
+        0
     };
 
 class CMainParams : public CChainParams {
@@ -142,10 +142,10 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xa8b81f992813199b850b8ed9e1ee8babd7241916ac16643db371ccfbe492516c"));
 
 
-        vSeeds.push_back(CDNSSeedData("wuzhucoinnode-this", "197.215.253.222"));
-        vSeeds.push_back(CDNSSeedData("wuzhucoinnode-this", "0.0.0.0"));
-        //vSeeds.push_back(CDNSSeedData("wuzhucoinnode-lavaithon", "169.255.184.184"));
-        //vSeeds.push_back(CDNSSeedData("wuzhucoin-aisha", "54.81.69.151"));
+        vSeeds.push_back(CDNSSeedData("cowrienode-this", "197.215.253.222"));
+        vSeeds.push_back(CDNSSeedData("cowrienode-home", "127.0.0.1"));
+        //vSeeds.push_back(CDNSSeedData("cowrienode-lavaithon", "169.255.184.184"));
+        //vSeeds.push_back(CDNSSeedData("cowrie-aisha", "54.81.69.151"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(48);
@@ -157,7 +157,7 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false; //settotrue
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -165,7 +165,7 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Wuzhucoin: Mainnet v2 enforced as of block 710k
+        // Cowrie: Mainnet v2 enforced as of block 710k
         nEnforceV2AfterHeight = 710000;
     }
 
@@ -226,7 +226,7 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        // Wuzhucoin: Testnet v2 enforced as of block 400k
+        // Cowrie: Testnet v2 enforced as of block 400k
         nEnforceV2AfterHeight = 400000;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -277,7 +277,7 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Wuzhucoin: v2 enforced using Wuzhucoin's supermajority rule
+        // Cowrie: v2 enforced using Cowrie's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -305,7 +305,7 @@ public:
         fAllowMinDifficultyBlocks = false;
         fMineBlocksOnDemand = true;
 
-        // Wuzhucoin: v2 enforced using Wuzhucoin's supermajority rule
+        // Cowrie: v2 enforced using Cowrie's supermajority rule
         nEnforceV2AfterHeight = -1;
     }
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,7 +31,7 @@ using namespace boost;
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Wuzhucoin cannot be compiled without assertions."
+# error "Cowrie cannot be compiled without assertions."
 #endif
 
 /**
@@ -73,7 +73,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Wuzhucoin Signed Message:\n";
+const string strMessageMagic = "Cowrie Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -913,7 +913,7 @@ CAmount GetMinRelayFee(const CTransaction& tx, unsigned int nBytes, bool fAllowF
             return 0;
     }
 
-    // Wuzhucoin
+    // Cowrie
     // To limit dust spam, add 1000 byte penalty for each output smaller than DUST_THRESHOLD
     BOOST_FOREACH(const CTxOut& txout, tx.vout)
         if (txout.nValue < DUST_THRESHOLD)
@@ -1646,7 +1646,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("wuzhucoin-scriptch");
+    RenameThread("cowrie-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2552,7 +2552,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (pcheckpoint && nHeight < pcheckpoint->nHeight)
         return state.DoS(100, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
-    // Wuzhucoin: Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
+    // Cowrie: Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
     bool enforceV2 = false;
     if (block.nVersion < 2)
     {
@@ -2564,7 +2564,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
         }
         else
         {
-            // Regtest and Unittest: use Wuzhucoin's supermajority rule
+            // Regtest and Unittest: use Cowrie's supermajority rule
             if (CBlockIndex::IsSuperMajority(2, pindexPrev, Params().RejectBlockOutdatedMajority()))
                 enforceV2 = true;
         }
@@ -2601,7 +2601,7 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
             return state.DoS(10, error("%s : contains a non-final transaction", __func__), REJECT_INVALID, "bad-txns-nonfinal");
         }
 
-    // Wuzhucoin: (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
+    // Cowrie: (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
     // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
     // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
     bool checkHeightMismatch = false;
@@ -2615,7 +2615,7 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
         }
         else
         {
-            // Regtest and Unittest: use Wuzhucoin's supermajority rule
+            // Regtest and Unittest: use Cowrie's supermajority rule
             if (CBlockIndex::IsSuperMajority(2, pindexPrev, Params().EnforceBlockUpgradeMajority()))
                 checkHeightMismatch = true;
         }

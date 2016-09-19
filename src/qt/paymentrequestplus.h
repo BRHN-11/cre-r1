@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_PAYMENTREQUESTPLUS_H
-#define WUZHUCOIN_QT_PAYMENTREQUESTPLUS_H
+#ifndef COWRIE_QT_PAYMENTREQUESTPLUS_H
+#define COWRIE_QT_PAYMENTREQUESTPLUS_H
 
 #include "paymentrequest.pb.h"
 
@@ -42,4 +42,4 @@ private:
     payments::PaymentDetails details;
 };
 
-#endif // WUZHUCOIN_QT_PAYMENTREQUESTPLUS_H
+#endif // COWRIE_QT_PAYMENTREQUESTPLUS_H

@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2013 The Wuzhucoin Core developers
+// Copyright (c) 2012-2013 The Cowrie Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,10 +21,10 @@ static const string strSecret1     ("6uGFQ4DSW7zh1viHZi6iiVT17CncvoaV4MHvGvJKPDa
 static const string strSecret2     ("6vVo7sPkeLTwVdAntrv4Gbnsyr75H8ChD3P5iyHziwaqe8mCYR5");
 static const string strSecret1C    ("T3gJYmBuZXsdd65E7NQF88ZmUP2MaUanqnZg9GFS94W7kND4Ebjq");
 static const string strSecret2C    ("T986ZKRRdnuuXLeDZuKBRrZW1ujotAncU9WTrFU1n7vMgRW75ZtF");
-static const CWuzhucoinAddress addr1 ("LiUo6Zn39joYJBzPUhssbDwAywhjFcoHE3");
-static const CWuzhucoinAddress addr2 ("LZJvLSP5SGKcFS13MHgdrVhpFUbEMB5XVC");
-static const CWuzhucoinAddress addr1C("Lh2G82Bi33RNuzz4UfSMZbh54jnWHVnmw8");
-static const CWuzhucoinAddress addr2C("LWegHWHB5rmaF5rgWYt1YN3StapRdnGJfU");
+static const CCowrieAddress addr1 ("LiUo6Zn39joYJBzPUhssbDwAywhjFcoHE3");
+static const CCowrieAddress addr2 ("LZJvLSP5SGKcFS13MHgdrVhpFUbEMB5XVC");
+static const CCowrieAddress addr1C("Lh2G82Bi33RNuzz4UfSMZbh54jnWHVnmw8");
+static const CCowrieAddress addr2C("LWegHWHB5rmaF5rgWYt1YN3StapRdnGJfU");
 
 
 static const string strAddressBad("Lbi6bpMhSwp2CXkivEeUK9wzyQEFzHDfSr");
@@ -45,14 +45,14 @@ void dumpKeyInfo(uint256 privkey)
     {
         bool fCompressed = nCompressed == 1;
         printf("  * %s:\n", fCompressed ? "compressed" : "uncompressed");
-        CWuzhucoinSecret bsecret;
+        CCowrieSecret bsecret;
         bsecret.SetSecret(secret, fCompressed);
         printf("    * secret (base58): %s\n", bsecret.ToString().c_str());
         CKey key;
         key.SetSecret(secret, fCompressed);
         vector<unsigned char> vchPubKey = key.GetPubKey();
         printf("    * pubkey (hex): %s\n", HexStr(vchPubKey).c_str());
-        printf("    * address (base58): %s\n", CWuzhucoinAddress(vchPubKey).ToString().c_str());
+        printf("    * address (base58): %s\n", CCowrieAddress(vchPubKey).ToString().c_str());
     }
 }
 #endif
@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_SUITE(key_tests)
 
 BOOST_AUTO_TEST_CASE(key_test1)
 {
-    CWuzhucoinSecret bsecret1, bsecret2, bsecret1C, bsecret2C, baddress1;
+    CCowrieSecret bsecret1, bsecret2, bsecret1C, bsecret2C, baddress1;
     BOOST_CHECK( bsecret1.SetString (strSecret1));
     BOOST_CHECK( bsecret2.SetString (strSecret2));
     BOOST_CHECK( bsecret1C.SetString(strSecret1C));

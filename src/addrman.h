@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_ADDRMAN_H
-#define WUZHUCOIN_ADDRMAN_H
+#ifndef COWRIE_ADDRMAN_H
+#define COWRIE_ADDRMAN_H
 
 #include "netbase.h"
 #include "protocol.h"
@@ -570,4 +570,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_ADDRMAN_H
+#endif // COWRIE_ADDRMAN_H

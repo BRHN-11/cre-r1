@@ -1,10 +1,10 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "recentrequeststablemodel.h"
 
-#include "wuzhucoinunits.h"
+#include "cowrieunits.h"
 #include "clientversion.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
@@ -84,9 +84,9 @@ QVariant RecentRequestsTableModel::data(const QModelIndex &index, int role) cons
             if (rec->recipient.amount == 0 && role == Qt::DisplayRole)
                 return tr("(no amount)");
             else if (role == Qt::EditRole)
-                return WuzhucoinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, WuzhucoinUnits::separatorNever);
+                return CowrieUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, CowrieUnits::separatorNever);
             else
-                return WuzhucoinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
+                return CowrieUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
         }
     }
     else if (role == Qt::TextAlignmentRole)
@@ -127,7 +127,7 @@ QString RecentRequestsTableModel::getAmountTitle()
     QString amountTitle = tr("Amount");
     if (this->walletModel->getOptionsModel() != NULL)
     {
-        amountTitle += " ("+WuzhucoinUnits::name(this->walletModel->getOptionsModel()->getDisplayUnit()) + ")";
+        amountTitle += " ("+CowrieUnits::name(this->walletModel->getOptionsModel()->getDisplayUnit()) + ")";
     }
     return amountTitle;
 }

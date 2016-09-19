@@ -133,6 +133,6 @@ Threads
 
 - ThreadRPCServer : Remote procedure call handler, listens on port 8244 for connections and services them.
 
-- WuzhucoinMiner : Generates wuzhucoins (if wallet is enabled).
+- CowrieMiner : Generates cowries (if wallet is enabled).
 
 - Shutdown : Does an orderly shutdown of everything.

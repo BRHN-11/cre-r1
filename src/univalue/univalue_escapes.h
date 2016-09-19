@@ -1,6 +1,6 @@
 // Automatically generated file. Do not modify.
-#ifndef WUZHUCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
-#define WUZHUCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
+#ifndef COWRIE_UNIVALUE_UNIVALUE_ESCAPES_H
+#define COWRIE_UNIVALUE_UNIVALUE_ESCAPES_H
 static const char *escapes[256] = {
 	NULL,
 	NULL,
@@ -259,4 +259,4 @@ static const char *escapes[256] = {
 	NULL,
 	NULL,
 };
-#endif // WUZHUCOIN_UNIVALUE_UNIVALUE_ESCAPES_H
+#endif // COWRIE_UNIVALUE_UNIVALUE_ESCAPES_H

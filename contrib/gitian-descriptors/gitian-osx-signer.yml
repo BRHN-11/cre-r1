@@ -1,5 +1,5 @@
 ---
-name: "wuzhucoin-dmg-signer"
+name: "cowrie-dmg-signer"
 suites:
 - "precise"
 architectures:
@@ -10,7 +10,7 @@ packages:
 reference_datetime: "2016-01-01 00:00:00"
 remotes: []
 files:
-- "wuzhucoin-osx-unsigned.tar.gz"
+- "cowrie-osx-unsigned.tar.gz"
 - "signature.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
@@ -28,10 +28,10 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=wuzhucoin-osx-unsigned.tar.gz
-  SIGNED=wuzhucoin-osx-signed.dmg
+  UNSIGNED=cowrie-osx-unsigned.tar.gz
+  SIGNED=cowrie-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature.tar.gz
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Wuzhucoin-Qt" -no-pad -r -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Cowrie-Qt" -no-pad -r -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}

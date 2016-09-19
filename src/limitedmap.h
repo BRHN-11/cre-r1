@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2014 The Wuzhucoin developers
+// Copyright (c) 2012-2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_LIMITEDMAP_H
-#define WUZHUCOIN_LIMITEDMAP_H
+#ifndef COWRIE_LIMITEDMAP_H
+#define COWRIE_LIMITEDMAP_H
 
 #include <assert.h>
 #include <map>
@@ -91,4 +91,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_LIMITEDMAP_H
+#endif // COWRIE_LIMITEDMAP_H

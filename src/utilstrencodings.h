@@ -1,13 +1,13 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef WUZHUCOIN_UTILSTRENCODINGS_H
-#define WUZHUCOIN_UTILSTRENCODINGS_H
+#ifndef COWRIE_UTILSTRENCODINGS_H
+#define COWRIE_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -95,4 +95,4 @@ bool TimingResistantEqual(const T& a, const T& b)
     return accumulator == 0;
 }
 
-#endif // WUZHUCOIN_UTILSTRENCODINGS_H
+#endif // COWRIE_UTILSTRENCODINGS_H

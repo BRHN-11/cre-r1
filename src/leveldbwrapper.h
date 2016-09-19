@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2014 The Wuzhucoin developers
+// Copyright (c) 2012-2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_LEVELDBWRAPPER_H
-#define WUZHUCOIN_LEVELDBWRAPPER_H
+#ifndef COWRIE_LEVELDBWRAPPER_H
+#define COWRIE_LEVELDBWRAPPER_H
 
 #include "clientversion.h"
 #include "serialize.h"
@@ -170,4 +170,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_LEVELDBWRAPPER_H
+#endif // COWRIE_LEVELDBWRAPPER_H

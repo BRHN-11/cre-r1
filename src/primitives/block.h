@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_PRIMITIVES_BLOCK_H
-#define WUZHUCOIN_PRIMITIVES_BLOCK_H
+#ifndef COWRIE_PRIMITIVES_BLOCK_H
+#define COWRIE_PRIMITIVES_BLOCK_H
 
 #include "primitives/transaction.h"
 #include "serialize.h"
@@ -170,4 +170,4 @@ struct CBlockLocator
     }
 };
 
-#endif // WUZHUCOIN_PRIMITIVES_BLOCK_H
+#endif // COWRIE_PRIMITIVES_BLOCK_H

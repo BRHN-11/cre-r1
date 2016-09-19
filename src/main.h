@@ -1,13 +1,13 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_MAIN_H
-#define WUZHUCOIN_MAIN_H
+#ifndef COWRIE_MAIN_H
+#define COWRIE_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "amount.h"
@@ -95,13 +95,13 @@ static const unsigned int DATABASE_WRITE_INTERVAL = 3600;
 /** Maximum length of reject messages. */
 static const unsigned int MAX_REJECT_MESSAGE_LENGTH = 111;
 
-/** Wuzhucoin: Dust Threshold: outputs below this value in shells are assessed an additional 1000 bytes per txout */
-static const CAmount DUST_THRESHOLD = 100000; // 0.001 WZC
-/** Wuzhucoin: Default TX Fee per 1000 bytes */
-static const CAmount DEFAULT_TX_FEE = 100000; // 0.001 WZC
+/** Cowrie: Dust Threshold: outputs below this value in shells are assessed an additional 1000 bytes per txout */
+static const CAmount DUST_THRESHOLD = 100000; // 0.001 COR
+/** Cowrie: Default TX Fee per 1000 bytes */
+static const CAmount DEFAULT_TX_FEE = 100000; // 0.001 COR
 
-/** Wuzhucoin: default minimum input threshold, override with -mininput */
-static const CAmount DEFAULT_MINIMUM_INPUT_THRESHOLD = DUST_THRESHOLD / 100; // 0.00001 WZC
+/** Cowrie: default minimum input threshold, override with -mininput */
+static const CAmount DEFAULT_MINIMUM_INPUT_THRESHOLD = DUST_THRESHOLD / 100; // 0.00001 COR
 
 /** "reject" message codes */
 static const unsigned char REJECT_MALFORMED = 0x01;
@@ -573,4 +573,4 @@ protected:
     friend void ::UnregisterAllValidationInterfaces();
 };
 
-#endif // WUZHUCOIN_MAIN_H
+#endif // COWRIE_MAIN_H

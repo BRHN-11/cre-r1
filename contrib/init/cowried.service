@@ -1,0 +1,22 @@
+[Unit]
+Description=Cowrie's distributed currency daemon
+After=network.target
+
+[Service]
+User=cowrie
+Group=cowrie
+
+Type=forking
+PIDFile=/var/lib/cowried/cowried.pid
+ExecStart=/usr/bin/cowried -daemon -pid=/var/lib/cowried/cowried.pid \
+-conf=/etc/cowrie/cowrie.conf -datadir=/var/lib/cowried -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

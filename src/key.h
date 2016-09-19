@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_KEY_H
-#define WUZHUCOIN_KEY_H
+#ifndef COWRIE_KEY_H
+#define COWRIE_KEY_H
 
 #include "allocators.h"
 #include "serialize.h"
@@ -177,4 +177,4 @@ struct CExtKey {
 /** Check that required EC support is available at runtime */
 bool ECC_InitSanityCheck(void);
 
-#endif // WUZHUCOIN_KEY_H
+#endif // COWRIE_KEY_H

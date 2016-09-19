@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_COMPRESSOR_H
-#define WUZHUCOIN_COMPRESSOR_H
+#ifndef COWRIE_COMPRESSOR_H
+#define COWRIE_COMPRESSOR_H
 
 #include "primitives/transaction.h"
 #include "script/script.h"
@@ -120,4 +120,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_COMPRESSOR_H
+#endif // COWRIE_COMPRESSOR_H

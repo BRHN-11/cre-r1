@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CRYPTER_H
-#define WUZHUCOIN_CRYPTER_H
+#ifndef COWRIE_CRYPTER_H
+#define COWRIE_CRYPTER_H
 
 #include "allocators.h"
 #include "keystore.h"
@@ -196,4 +196,4 @@ public:
     boost::signals2::signal<void (CCryptoKeyStore* wallet)> NotifyStatusChanged;
 };
 
-#endif // WUZHUCOIN_CRYPTER_H
+#endif // COWRIE_CRYPTER_H

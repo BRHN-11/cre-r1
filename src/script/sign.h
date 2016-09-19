@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_SCRIPT_SIGN_H
-#define WUZHUCOIN_SCRIPT_SIGN_H
+#ifndef COWRIE_SCRIPT_SIGN_H
+#define COWRIE_SCRIPT_SIGN_H
 
 #include "script/interpreter.h"
 
@@ -23,4 +23,4 @@ bool SignSignature(const CKeyStore& keystore, const CTransaction& txFrom, CMutab
  */
 CScript CombineSignatures(const CScript& scriptPubKey, const CTransaction& txTo, unsigned int nIn, const CScript& scriptSig1, const CScript& scriptSig2);
 
-#endif // WUZHUCOIN_SCRIPT_SIGN_H
+#endif // COWRIE_SCRIPT_SIGN_H

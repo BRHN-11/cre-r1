@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_PRIMITIVES_TRANSACTION_H
-#define WUZHUCOIN_PRIMITIVES_TRANSACTION_H
+#ifndef COWRIE_PRIMITIVES_TRANSACTION_H
+#define COWRIE_PRIMITIVES_TRANSACTION_H
 
 #include "amount.h"
 #include "script/script.h"
@@ -266,4 +266,4 @@ struct CMutableTransaction
     uint256 GetHash() const;
 };
 
-#endif // WUZHUCOIN_PRIMITIVES_TRANSACTION_H
+#endif // COWRIE_PRIMITIVES_TRANSACTION_H

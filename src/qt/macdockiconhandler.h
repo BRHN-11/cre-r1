@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_MACDOCKICONHANDLER_H
-#define WUZHUCOIN_QT_MACDOCKICONHANDLER_H
+#ifndef COWRIE_QT_MACDOCKICONHANDLER_H
+#define COWRIE_QT_MACDOCKICONHANDLER_H
 
 #include <QMainWindow>
 #include <QObject>
@@ -41,4 +41,4 @@ private:
     QMainWindow *mainWindow;
 };
 
-#endif // WUZHUCOIN_QT_MACDOCKICONHANDLER_H
+#endif // COWRIE_QT_MACDOCKICONHANDLER_H

@@ -1,11 +1,11 @@
 --- 
-name: wuzhucoin
+name: cowrie
 urls:
-- http://wuzhucoin.org/wuzhucoin-latest-linux-gitian.zip
+- http://cowrie.org/cowrie-latest-linux-gitian.zip
 rss:
 - url: 
   xpath: //item/link/text()
-  pattern: wuzhucoin-\d+.\d+.\d+-linux-gitian.zip
+  pattern: cowrie-\d+.\d+.\d+-linux-gitian.zip
 signers:
   0A82509767C7D4A5D14DA2301AE1D35043E08E54:
     name: BlueMatt

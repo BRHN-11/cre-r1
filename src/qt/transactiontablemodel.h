@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_TRANSACTIONTABLEMODEL_H
-#define WUZHUCOIN_QT_TRANSACTIONTABLEMODEL_H
+#ifndef COWRIE_QT_TRANSACTIONTABLEMODEL_H
+#define COWRIE_QT_TRANSACTIONTABLEMODEL_H
 
-#include "wuzhucoinunits.h"
+#include "cowrieunits.h"
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -90,7 +90,7 @@ private:
     QString formatTxDate(const TransactionRecord *wtx) const;
     QString formatTxType(const TransactionRecord *wtx) const;
     QString formatTxToAddress(const TransactionRecord *wtx, bool tooltip) const;
-    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, WuzhucoinUnits::SeparatorStyle separators=WuzhucoinUnits::separatorStandard) const;
+    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, CowrieUnits::SeparatorStyle separators=CowrieUnits::separatorStandard) const;
     QString formatTooltip(const TransactionRecord *rec) const;
     QVariant txStatusDecoration(const TransactionRecord *wtx) const;
     QVariant txWatchonlyDecoration(const TransactionRecord *wtx) const;
@@ -109,4 +109,4 @@ public slots:
     friend class TransactionTablePriv;
 };
 
-#endif // WUZHUCOIN_QT_TRANSACTIONTABLEMODEL_H
+#endif // COWRIE_QT_TRANSACTIONTABLEMODEL_H

@@ -1,0 +1,27 @@
+# /etc/conf.d/cowried: config file for /etc/init.d/cowried
+
+# Config file location
+#COWRIED_CONFIGFILE="/etc/cowrie/cowrie.conf"
+
+# What directory to write pidfile to?  (created and owned by $COWRIED_USER)
+#COWRIED_PIDDIR="/var/run/cowried"
+
+# What filename to give the pidfile
+#COWRIED_PIDFILE="${COWRIED_PIDDIR}/cowried.pid"
+
+# Where to write cowried data (be mindful that the blockchain is large)
+#COWRIED_DATADIR="/var/lib/cowried"
+
+# User and group to own cowried process
+#COWRIED_USER="cowrie"
+#COWRIED_GROUP="cowrie"
+
+# Path to cowried executable
+#COWRIED_BIN="/usr/bin/cowried"
+
+# Nice value to run cowried under
+#COWRIED_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+COWRIED_OPTS="-disablewallet"
+

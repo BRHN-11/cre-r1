@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_TXMEMPOOL_H
-#define WUZHUCOIN_TXMEMPOOL_H
+#ifndef COWRIE_TXMEMPOOL_H
+#define COWRIE_TXMEMPOOL_H
 
 #include <list>
 
@@ -173,4 +173,4 @@ public:
     bool HaveCoins(const uint256 &txid) const;
 };
 
-#endif // WUZHUCOIN_TXMEMPOOL_H
+#endif // COWRIE_TXMEMPOOL_H

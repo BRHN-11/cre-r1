@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
-#define WUZHUCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
+#ifndef COWRIE_QT_SIGNVERIFYMESSAGEDIALOG_H
+#define COWRIE_QT_SIGNVERIFYMESSAGEDIALOG_H
 
 #include <QDialog>
 
@@ -48,4 +48,4 @@ private slots:
     void on_clearButton_VM_clicked();
 };
 
-#endif // WUZHUCOIN_QT_SIGNVERIFYMESSAGEDIALOG_H
+#endif // COWRIE_QT_SIGNVERIFYMESSAGEDIALOG_H

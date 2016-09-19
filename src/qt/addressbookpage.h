@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2013 The Wuzhucoin developers
+// Copyright (c) 2011-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_ADDRESSBOOKPAGE_H
-#define WUZHUCOIN_QT_ADDRESSBOOKPAGE_H
+#ifndef COWRIE_QT_ADDRESSBOOKPAGE_H
+#define COWRIE_QT_ADDRESSBOOKPAGE_H
 
 #include <QDialog>
 
@@ -84,4 +84,4 @@ signals:
     void sendCoins(QString addr);
 };
 
-#endif // WUZHUCOIN_QT_ADDRESSBOOKPAGE_H
+#endif // COWRIE_QT_ADDRESSBOOKPAGE_H

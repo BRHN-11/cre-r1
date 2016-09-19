@@ -1,7 +1,7 @@
-Wuzhucoin v0.3.24 is now available for download at
-https://sourceforge.net/projects/wuzhucoin/files/Wuzhucoin/wuzhucoin-0.3.24/
+Cowrie v0.3.24 is now available for download at
+https://sourceforge.net/projects/cowrie/files/Cowrie/cowrie-0.3.24/
 
-This is another bug fix release.  We had hoped to have wallet encryption ready for release, but more urgent fixes for existing clients were needed -- most notably block download problems were getting severe.  Wallet encryption is ready for testing at https://github.com/wuzhucoin/wuzhucoin/pull/352 for the git-savvy, and hopefully will follow shortly in the next release, v0.4.
+This is another bug fix release.  We had hoped to have wallet encryption ready for release, but more urgent fixes for existing clients were needed -- most notably block download problems were getting severe.  Wallet encryption is ready for testing at https://github.com/cowrie/cowrie/pull/352 for the git-savvy, and hopefully will follow shortly in the next release, v0.4.
 
 Notable fixes in v0.3.24, and the main reasons for this release:
 
@@ -13,8 +13,8 @@ Notable changes in v0.3.24:
 
 C1) DNS seeding enabled by default.
 
-C2) UPNP enabled by default in the GUI client.  The percentage of wuzhucoin clients that accept incoming connections is quite small, and that is a problem.  This should help.  wuzhucoind, and unofficial builds, are unchanged (though we encourage use of "-upnp" to help the network!)
+C2) UPNP enabled by default in the GUI client.  The percentage of cowrie clients that accept incoming connections is quite small, and that is a problem.  This should help.  cowried, and unofficial builds, are unchanged (though we encourage use of "-upnp" to help the network!)
 
-C3) Initial unit testing framework.  Wuzhucoin sorely needs automated tests, and this is a beginning.  Contributions welcome.
+C3) Initial unit testing framework.  Cowrie sorely needs automated tests, and this is a beginning.  Contributions welcome.
 
 C4) Internal wallet code cleanup.  While invisible to an end user, this change provides the basis for v0.4's wallet encryption.

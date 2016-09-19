@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2014 The Wuzhucoin developers
+// Copyright (c) 2012-2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_VERSION_H
-#define WUZHUCOIN_VERSION_H
+#ifndef COWRIE_VERSION_H
+#define COWRIE_VERSION_H
 
 /**
  * network protocol versioning
@@ -34,4 +34,4 @@ static const int BIP0031_VERSION = 60000;
 //! "mempool" command, enhanced "getdata" behavior starts with this version
 static const int MEMPOOL_GD_VERSION = 60002;
 
-#endif // WUZHUCOIN_VERSION_H
+#endif // COWRIE_VERSION_H

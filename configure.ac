@@ -6,17 +6,17 @@ define(_CLIENT_VERSION_REVISION, 4)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2016)
-AC_INIT([Wuzhucoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION._CLIENT_VERSION_BUILD],[info@wuzhucoin.org],[wuzhucoin])
+AC_INIT([Cowrie Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION._CLIENT_VERSION_BUILD],[info@cowrie.org],[cowrie])
 AC_CONFIG_SRCDIR([src/main.cpp])
-AC_CONFIG_HEADERS([src/config/wuzhucoin-config.h])
+AC_CONFIG_HEADERS([src/config/cowrie-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef WUZHUCOIN_CONFIG_H])
-AH_TOP([#define WUZHUCOIN_CONFIG_H])
-AH_BOTTOM([#endif //WUZHUCOIN_CONFIG_H])
+AH_TOP([#ifndef COWRIE_CONFIG_H])
+AH_TOP([#define COWRIE_CONFIG_H])
+AH_BOTTOM([#endif //COWRIE_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -173,21 +173,21 @@ CPPFLAGS="$CPPFLAGS -DBOOST_SPIRIT_THREADSAFE -DHAVE_BUILD_INFO -D__STDC_FORMAT_
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build wuzhucoin-cli wuzhucoin-tx (default=yes)])],
-  [build_wuzhucoin_utils=$withval],
-  [build_wuzhucoin_utils=yes])
+  [build cowrie-cli cowrie-tx (default=yes)])],
+  [build_cowrie_utils=$withval],
+  [build_cowrie_utils=yes])
 
 AC_ARG_WITH([libs],
   [AS_HELP_STRING([--with-libs],
   [build libraries (default=yes)])],
-  [build_wuzhucoin_libs=$withval],
-  [build_wuzhucoin_libs=yes])
+  [build_cowrie_libs=$withval],
+  [build_cowrie_libs=yes])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build wuzhucoind daemon (default=yes)])],
-  [build_wuzhucoind=$withval],
-  [build_wuzhucoind=yes])
+  [build cowried daemon (default=yes)])],
+  [build_cowried=$withval],
+  [build_cowried=yes])
 
 AC_LANG_PUSH([C++])
 
@@ -363,7 +363,7 @@ AC_C_BIGENDIAN([AC_MSG_ERROR("Big Endian not supported")])
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to wuzhucoin-config.h, but
+# The following macro will add the necessary defines to cowrie-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -506,7 +506,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    WUZHUCOIN_FIND_BDB48
+    COWRIE_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -518,12 +518,12 @@ if test x$use_upnp != xno; then
   )
 fi
 
-WUZHUCOIN_QT_INIT
+COWRIE_QT_INIT
 
-dnl sets $wuzhucoin_enable_qt, $wuzhucoin_enable_qt_test, $wuzhucoin_enable_qt_dbus
-WUZHUCOIN_QT_CONFIGURE([$use_pkgconfig], [qt4])
+dnl sets $cowrie_enable_qt, $cowrie_enable_qt_test, $cowrie_enable_qt_dbus
+COWRIE_QT_CONFIGURE([$use_pkgconfig], [qt4])
 
-if test x$build_wuzhucoin_utils$build_wuzhucoind$wuzhucoin_enable_qt$use_tests = xnononono; then
+if test x$build_cowrie_utils$build_cowried$cowrie_enable_qt$use_tests = xnononono; then
     use_boost=no
 else
     use_boost=yes
@@ -681,9 +681,9 @@ if test x$use_pkgconfig = xyes; then
     [
       PKG_CHECK_MODULES([SSL], [libssl],, [AC_MSG_ERROR(openssl  not found.)])
       PKG_CHECK_MODULES([CRYPTO], [libcrypto],,[AC_MSG_ERROR(libcrypto  not found.)])
-      WUZHUCOIN_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [WUZHUCOIN_QT_FAIL(libprotobuf not found)])])
+      COWRIE_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [COWRIE_QT_FAIL(libprotobuf not found)])])
       if test x$use_qr != xno; then
-        WUZHUCOIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+        COWRIE_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
     ]
   )
@@ -694,10 +694,10 @@ else
   AC_CHECK_HEADER([openssl/ssl.h],, AC_MSG_ERROR(libssl headers missing),)
   AC_CHECK_LIB([ssl],         [main],SSL_LIBS=-lssl, AC_MSG_ERROR(libssl missing))
 
-  WUZHUCOIN_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], WUZHUCOIN_QT_FAIL(libprotobuf not found)))
+  COWRIE_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], COWRIE_QT_FAIL(libprotobuf not found)))
   if test x$use_qr != xno; then
-    WUZHUCOIN_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-    WUZHUCOIN_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+    COWRIE_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+    COWRIE_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
   fi
 fi
 
@@ -732,22 +732,22 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 CFLAGS="$CFLAGS_TEMP"
 LIBS="$LIBS_TEMP"
 
-WUZHUCOIN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
+COWRIE_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
-AC_MSG_CHECKING([whether to build wuzhucoind])
-AM_CONDITIONAL([BUILD_WUZHUCOIND], [test x$build_wuzhucoind = xyes])
-AC_MSG_RESULT($build_wuzhucoind)
+AC_MSG_CHECKING([whether to build cowried])
+AM_CONDITIONAL([BUILD_COWRIED], [test x$build_cowried = xyes])
+AC_MSG_RESULT($build_cowried)
 
-AC_MSG_CHECKING([whether to build utils (wuzhucoin-cli wuzhucoin-tx)])
-AM_CONDITIONAL([BUILD_WUZHUCOIN_UTILS], [test x$build_wuzhucoin_utils = xyes])
-AC_MSG_RESULT($build_wuzhucoin_utils)
+AC_MSG_CHECKING([whether to build utils (cowrie-cli cowrie-tx)])
+AM_CONDITIONAL([BUILD_COWRIE_UTILS], [test x$build_cowrie_utils = xyes])
+AC_MSG_RESULT($build_cowrie_utils)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_WUZHUCOIN_LIBS], [test x$build_wuzhucoin_libs = xyes])
-if test x$build_wuzhucoin_libs = xyes; then
+AM_CONDITIONAL([BUILD_COWRIE_LIBS], [test x$build_cowrie_libs = xyes])
+if test x$build_cowrie_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
 fi
-AC_MSG_RESULT($build_wuzhucoin_libs)
+AC_MSG_RESULT($build_cowrie_libs)
 
 AC_LANG_POP
 
@@ -808,14 +808,14 @@ else
 fi
 
 dnl these are only used when qt is enabled
-if test x$wuzhucoin_enable_qt != xno; then
+if test x$cowrie_enable_qt != xno; then
   BUILD_QT=qt
   dnl enable dbus support
   AC_MSG_CHECKING([whether to build GUI with support for D-Bus])
-  if test x$wuzhucoin_enable_qt_dbus != xno; then
+  if test x$cowrie_enable_qt_dbus != xno; then
     AC_DEFINE([USE_DBUS],[1],[Define if dbus support should be compiled in])
   fi
-  AC_MSG_RESULT($wuzhucoin_enable_qt_dbus)
+  AC_MSG_RESULT($cowrie_enable_qt_dbus)
 
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
@@ -838,8 +838,8 @@ if test x$wuzhucoin_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_wuzhucoin-qt])
-  if test x$use_tests$wuzhucoin_enable_qt_test = xyesyes; then
+  AC_MSG_CHECKING([whether to build test_cowrie-qt])
+  if test x$use_tests$cowrie_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="test"
   else
@@ -847,7 +847,7 @@ if test x$wuzhucoin_enable_qt != xno; then
   fi
 fi
 
-AC_MSG_CHECKING([whether to build test_wuzhucoin])
+AC_MSG_CHECKING([whether to build test_cowrie])
 if test x$use_tests = xyes; then
   AC_MSG_RESULT([yes])
   BUILD_TEST="test"
@@ -862,7 +862,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_wuzhucoin_utils$build_wuzhucoin_libs$build_wuzhucoind$wuzhucoin_enable_qt$use_tests = xnonononono; then
+if test x$build_cowrie_utils$build_cowrie_libs$build_cowried$cowrie_enable_qt$use_tests = xnonononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui or --enable-tests])
 fi
 
@@ -871,8 +871,8 @@ AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
 AM_CONDITIONAL([ENABLE_WALLET],[test x$enable_wallet = xyes])
 AM_CONDITIONAL([ENABLE_TESTS],[test x$use_tests = xyes])
-AM_CONDITIONAL([ENABLE_QT],[test x$wuzhucoin_enable_qt = xyes])
-AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$use_tests$wuzhucoin_enable_qt_test = xyesyes])
+AM_CONDITIONAL([ENABLE_QT],[test x$cowrie_enable_qt = xyes])
+AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$use_tests$cowrie_enable_qt_test = xyesyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
 AM_CONDITIONAL([USE_LCOV],[test x$use_lcov = xyes])
 AM_CONDITIONAL([USE_COMPARISON_TOOL],[test x$use_comparison_tool != xno])
@@ -906,7 +906,7 @@ AC_SUBST(BUILD_TEST_QT)
 AC_SUBST(MINIUPNPC_CPPFLAGS)
 AC_SUBST(MINIUPNPC_LIBS)
 AC_CONFIG_FILES([Makefile src/Makefile share/setup.nsi share/qt/Info.plist src/test/buildenv.py])
-AC_CONFIG_FILES([qa/pull-tester/run-wuzhucoind-for-test.sh],[chmod +x qa/pull-tester/run-wuzhucoind-for-test.sh])
+AC_CONFIG_FILES([qa/pull-tester/run-cowried-for-test.sh],[chmod +x qa/pull-tester/run-cowried-for-test.sh])
 AC_CONFIG_FILES([qa/pull-tester/tests-config.sh],[chmod +x qa/pull-tester/tests-config.sh])
 
 dnl boost's m4 checks do something really nasty: they export these vars. As a

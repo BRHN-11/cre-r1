@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-# Copyright (c) 2015 The Wuzhucoin Core developers
+# Copyright (c) 2015 The Cowrie Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,12 +7,12 @@
 # Test the CHECKLOCKTIMEVERIFY (BIP65) soft-fork logic
 #
 
-from test_framework.test_framework import WuzhucoinTestFramework
+from test_framework.test_framework import CowrieTestFramework
 from test_framework.util import *
 import os
 import shutil
 
-class BIP65Test(WuzhucoinTestFramework):
+class BIP65Test(CowrieTestFramework):
 
     def setup_network(self):
         self.nodes = []

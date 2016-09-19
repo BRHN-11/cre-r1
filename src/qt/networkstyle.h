@@ -1,9 +1,9 @@
-// Copyright (c) 2014 The Wuzhucoin developers
+// Copyright (c) 2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_NETWORKSTYLE_H
-#define WUZHUCOIN_QT_NETWORKSTYLE_H
+#ifndef COWRIE_QT_NETWORKSTYLE_H
+#define COWRIE_QT_NETWORKSTYLE_H
 
 #include <QIcon>
 #include <QPixmap>
@@ -30,4 +30,4 @@ private:
     QPixmap splashImage;
 };
 
-#endif // WUZHUCOIN_QT_NETWORKSTYLE_H
+#endif // COWRIE_QT_NETWORKSTYLE_H

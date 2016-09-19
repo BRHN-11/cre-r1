@@ -1,4 +1,4 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -288,7 +288,7 @@ pM7aDaxDdTHVhSUk4lgNAvi26dGY7nZMsnHlPQ2tPp/HvRRiMq1oDjlylc8VTCI1\
 Eh8IsNsGEhl2qRSVYIoDyPul6RMbTSzv4tVhVfGZqIisGLLhxYsFKgxVbml0VGVz\
 dEZvdXIqgAEBE1PP93Tkpif35F+dYmXn9kLA/1djcPjCs2o2rwRMM4Uk356O5dgu\
 HXQjsfdR58qZQS9CS5DAtRUf0R8+43/wijO/hb49VNaNXmY+/cPHMkahP2aV3tZi\
-FAyZblLik9A7ZvF+UsjeFQiHB5wzWQvbqk5wQ4yabHIXoYv/E0q+eQ==\
+FAyZblLik9A7ZvF+UsjeFQiHB5coRQvbqk5wQ4yabHIXoYv/E0q+eQ==\
 ";
 
 const char* paymentrequest5_BASE64 =

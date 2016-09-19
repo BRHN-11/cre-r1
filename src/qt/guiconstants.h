@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_GUICONSTANTS_H
-#define WUZHUCOIN_QT_GUICONSTANTS_H
+#ifndef COWRIE_QT_GUICONSTANTS_H
+#define COWRIE_QT_GUICONSTANTS_H
 
 /* Milliseconds between model updates */
 static const int MODEL_UPDATE_DELAY = 250;
@@ -11,7 +11,7 @@ static const int MODEL_UPDATE_DELAY = 250;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* WuzhucoinGUI -- Size of icons in status bar */
+/* CowrieGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 /* Invalid field background style */
@@ -44,9 +44,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Wuzhucoin"
-#define QAPP_ORG_DOMAIN "wuzhucoin.org"
-#define QAPP_APP_NAME_DEFAULT "Wuzhucoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Wuzhucoin-Qt-testnet"
+#define QAPP_ORG_NAME "Cowrie"
+#define QAPP_ORG_DOMAIN "cowrie.org"
+#define QAPP_APP_NAME_DEFAULT "Cowrie-Qt"
+#define QAPP_APP_NAME_TESTNET "Cowrie-Qt-testnet"
 
-#endif // WUZHUCOIN_QT_GUICONSTANTS_H
+#endif // COWRIE_QT_GUICONSTANTS_H

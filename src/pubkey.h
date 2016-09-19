@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_PUBKEY_H
-#define WUZHUCOIN_PUBKEY_H
+#ifndef COWRIE_PUBKEY_H
+#define COWRIE_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -203,4 +203,4 @@ struct CExtPubKey {
     bool Derive(CExtPubKey& out, unsigned int nChild) const;
 };
 
-#endif // WUZHUCOIN_PUBKEY_H
+#endif // COWRIE_PUBKEY_H

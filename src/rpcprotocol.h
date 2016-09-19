@@ -1,10 +1,10 @@
 // Copyright (c) 2010 shell Nakamoto
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_RPCPROTOCOL_H
-#define WUZHUCOIN_RPCPROTOCOL_H
+#ifndef COWRIE_RPCPROTOCOL_H
+#define COWRIE_RPCPROTOCOL_H
 
 #include <list>
 #include <map>
@@ -31,7 +31,7 @@ enum HTTPStatusCode
     HTTP_SERVICE_UNAVAILABLE   = 503,
 };
 
-//! Wuzhucoin RPC error codes
+//! Cowrie RPC error codes
 enum RPCErrorCode
 {
     //! Standard JSON-RPC 2.0 errors
@@ -61,7 +61,7 @@ enum RPCErrorCode
     RPC_TRANSACTION_ALREADY_IN_CHAIN= RPC_VERIFY_ALREADY_IN_CHAIN,
 
     //! P2P client errors
-    RPC_CLIENT_NOT_CONNECTED        = -9,  //! Wuzhucoin is not connected
+    RPC_CLIENT_NOT_CONNECTED        = -9,  //! Cowrie is not connected
     RPC_CLIENT_IN_INITIAL_DOWNLOAD  = -10, //! Still downloading initial blocks
     RPC_CLIENT_NODE_ALREADY_ADDED   = -23, //! Node is already added
     RPC_CLIENT_NODE_NOT_ADDED       = -24, //! Node has not been added before
@@ -166,4 +166,4 @@ json_spirit::Object JSONRPCReplyObj(const json_spirit::Value& result, const json
 std::string JSONRPCReply(const json_spirit::Value& result, const json_spirit::Value& error, const json_spirit::Value& id);
 json_spirit::Object JSONRPCError(int code, const std::string& message);
 
-#endif // WUZHUCOIN_RPCPROTOCOL_H
+#endif // COWRIE_RPCPROTOCOL_H

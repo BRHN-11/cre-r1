@@ -1,13 +1,13 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_COMPAT_H
-#define WUZHUCOIN_COMPAT_H
+#ifndef COWRIE_COMPAT_H
+#define COWRIE_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #ifdef WIN32
@@ -99,4 +99,4 @@ bool static inline IsSelectableSocket(SOCKET s) {
 #endif
 }
 
-#endif // WUZHUCOIN_COMPAT_H
+#endif // COWRIE_COMPAT_H

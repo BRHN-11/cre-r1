@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_AMOUNT_H
-#define WUZHUCOIN_AMOUNT_H
+#ifndef COWRIE_AMOUNT_H
+#define COWRIE_AMOUNT_H
 
 #include "serialize.h"
 
@@ -51,4 +51,4 @@ public:
     }
 };
 
-#endif //  WUZHUCOIN_AMOUNT_H
+#endif //  COWRIE_AMOUNT_H

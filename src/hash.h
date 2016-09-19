@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_HASH_H
-#define WUZHUCOIN_HASH_H
+#ifndef COWRIE_HASH_H
+#define COWRIE_HASH_H
 
 #include "crypto/ripemd160.h"
 #include "crypto/sha256.h"
@@ -14,7 +14,7 @@
 
 #include <vector>
 
-/** A hasher class for Wuzhucoin's 256-bit hash (double SHA-256). */
+/** A hasher class for Cowrie's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -38,7 +38,7 @@ public:
     }
 };
 
-/** A hasher class for Wuzhucoin's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for Cowrie's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;
@@ -161,4 +161,4 @@ unsigned int MurmurHash3(unsigned int nHashSeed, const std::vector<unsigned char
 
 void BIP32Hash(const unsigned char chainCode[32], unsigned int nChild, unsigned char header, const unsigned char data[32], unsigned char output[64]);
 
-#endif // WUZHUCOIN_HASH_H
+#endif // COWRIE_HASH_H

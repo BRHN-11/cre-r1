@@ -1,4 +1,4 @@
-Source: wuzhucoin
+Source: cowrie
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
@@ -23,15 +23,15 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://www.wuzhucoin.org/
-Vcs-Git: git://github.com/wuzhucoin/wuzhucoin.git
-Vcs-Browser: https://github.com/wuzhucoin/wuzhucoin
+Homepage: https://www.cowrie.org/
+Vcs-Git: git://github.com/cowrie/cowrie.git
+Vcs-Browser: https://github.com/cowrie/cowrie
 
-Package: wuzhucoind
+Package: cowried
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Wuzhucoin is a free open source peer-to-peer electronic cash system that
+ Cowrie is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -40,14 +40,14 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 20+ GB of space, slowly growing.
  .
- This package provides the daemon, wuzhucoind, and the CLI tool
- wuzhucoin-cli to interact with the daemon.
+ This package provides the daemon, cowried, and the CLI tool
+ cowrie-cli to interact with the daemon.
 
-Package: wuzhucoin-qt
+Package: cowrie-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Wuzhucoin is a free open source peer-to-peer electronic cash system that
+ Cowrie is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -56,18 +56,18 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 20+ GB of space, slowly growing.
  .
- This package provides Wuzhucoin-Qt, a GUI for Wuzhucoin based on Qt.
+ This package provides Cowrie-Qt, a GUI for Cowrie based on Qt.
 
-Package: wuzhucoin-tx
+Package: cowrie-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Wuzhucoin is a free open source peer-to-peer electronic cash system that
+ Cowrie is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
- This package provides wuzhucoin-tx, a command-line transaction creation
- tool which can be used without a wuzhucoin daemon.  Some means of
+ This package provides cowrie-tx, a command-line transaction creation
+ tool which can be used without a cowrie daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

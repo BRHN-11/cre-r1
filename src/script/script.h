@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_SCRIPT_SCRIPT_H
-#define WUZHUCOIN_SCRIPT_SCRIPT_H
+#ifndef COWRIE_SCRIPT_SCRIPT_H
+#define COWRIE_SCRIPT_SCRIPT_H
 
 #include <assert.h>
 #include <climits>
@@ -569,7 +569,7 @@ public:
     }
 
     /**
-     * Pre-version-0.6, Wuzhucoin always counted CHECKMULTISIGs
+     * Pre-version-0.6, Cowrie always counted CHECKMULTISIGs
      * as 20 sigops. With pay-to-script-hash, that changed:
      * CHECKMULTISIGs serialized in scriptSigs are
      * counted more accurately, assuming they are of the form
@@ -606,4 +606,4 @@ public:
     }
 };
 
-#endif // WUZHUCOIN_SCRIPT_SCRIPT_H
+#endif // COWRIE_SCRIPT_SCRIPT_H

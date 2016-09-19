@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_ECCRYPTOVERIFY_H
-#define WUZHUCOIN_ECCRYPTOVERIFY_H
+#ifndef COWRIE_ECCRYPTOVERIFY_H
+#define COWRIE_ECCRYPTOVERIFY_H
 
 #include <vector>
 #include <cstdlib>
@@ -18,4 +18,4 @@ bool CheckSignatureElement(const unsigned char *vch, int len, bool half);
 
 } // eccrypto namespace
 
-#endif // WUZHUCOIN_ECCRYPTOVERIFY_H
+#endif // COWRIE_ECCRYPTOVERIFY_H

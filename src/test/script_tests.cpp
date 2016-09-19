@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2014 The Wuzhucoin Core developers
+// Copyright (c) 2011-2014 The Cowrie Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +15,7 @@
 #include "util.h"
 
 #if defined(HAVE_CONSENSUS_LIB)
-#include "script/wuzhucoinconsensus.h"
+#include "script/cowrieconsensus.h"
 #endif
 
 #include <fstream>
@@ -105,7 +105,7 @@ void DoTest(const CScript& scriptPubKey, const CScript& scriptSig, int flags, bo
 #if defined(HAVE_CONSENSUS_LIB)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << tx2;
-    BOOST_CHECK_MESSAGE(wuzhucoinconsensus_verify_script(begin_ptr(scriptPubKey), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), 0, flags, NULL) == expect,message);
+    BOOST_CHECK_MESSAGE(cowrieconsensus_verify_script(begin_ptr(scriptPubKey), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), 0, flags, NULL) == expect,message);
 #endif
 }
 

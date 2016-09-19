@@ -1,4 +1,4 @@
-The following is a list of assets used in the wuzhucoin source and their proper attribution.
+The following is a list of assets used in the cowrie source and their proper attribution.
 
 [Wladimir van der Laan](https://github.com/laanwj)
 -----------------------
@@ -47,7 +47,7 @@ md2k7
 * Designer: md2k7
 * License: You are free to do with these icons as you wish, including selling, copying, modifying etc.
 * License: MIT
-* Site: [https://wuzhucointalk.org/index.php?topic=15276.0](https://wuzhucointalk.org/index.php?topic=15276.0)
+* Site: [https://cowrietalk.org/index.php?topic=15276.0](https://cowrietalk.org/index.php?topic=15276.0)
 
 ### Assets Used
 	src/qt/res/icons/transaction*.png
@@ -93,11 +93,11 @@ Jonas Schnelli
 -----------------------
 
 ### Info
-* Designer: Jonas Schnelli (based on the original wuzhucoin logo from Bitboy)
+* Designer: Jonas Schnelli (based on the original cowrie logo from Bitboy)
 * License: MIT
 
 ### Assets Used
-	src/qt/res/icons/wuzhucoin.icns, src/qt/res/src/wuzhucoin.svg,
-	src/qt/res/src/wuzhucoin.ico, src/qt/res/src/wuzhucoin.png,
-	src/qt/res/src/wuzhucoin_testnet.png, docs/wuzhucoin_logo_doxygen.png,
+	src/qt/res/icons/cowrie.icns, src/qt/res/src/cowrie.svg,
+	src/qt/res/src/cowrie.ico, src/qt/res/src/cowrie.png,
+	src/qt/res/src/cowrie_testnet.png, docs/cowrie_logo_doxygen.png,
 	src/qt/res/images/splash.png, src/qt/res/images/splash_testnet.png

@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2014 The Wuzhucoin developers
+// Copyright (c) 2011-2014 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_RPCCONSOLE_H
-#define WUZHUCOIN_QT_RPCCONSOLE_H
+#ifndef COWRIE_QT_RPCCONSOLE_H
+#define COWRIE_QT_RPCCONSOLE_H
 
 #include "guiutil.h"
 #include "peertablemodel.h"
@@ -22,7 +22,7 @@ QT_BEGIN_NAMESPACE
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Wuzhucoin RPC console. */
+/** Local Cowrie RPC console. */
 class RPCConsole: public QDialog
 {
     Q_OBJECT
@@ -100,4 +100,4 @@ private:
     NodeId cachedNodeid;
 };
 
-#endif // WUZHUCOIN_QT_RPCCONSOLE_H
+#endif // COWRIE_QT_RPCCONSOLE_H

@@ -1,6 +1,0 @@
-usr/local/bin/wuzhucoin-qt usr/bin
-share/pixmaps/wuzhucoin32.xpm usr/share/pixmaps
-share/pixmaps/wuzhucoin16.xpm usr/share/pixmaps
-share/pixmaps/wuzhucoin128.png usr/share/pixmaps
-debian/wuzhucoin-qt.desktop usr/share/applications
-debian/wuzhucoin-qt.protocol usr/share/kde4/services/

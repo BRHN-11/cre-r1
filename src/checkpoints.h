@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CHECKPOINTS_H
-#define WUZHUCOIN_CHECKPOINTS_H
+#ifndef COWRIE_CHECKPOINTS_H
+#define COWRIE_CHECKPOINTS_H
 
 #include "uint256.h"
 
@@ -41,4 +41,4 @@ extern bool fEnabled;
 
 } //namespace Checkpoints
 
-#endif // WUZHUCOIN_CHECKPOINTS_H
+#endif // COWRIE_CHECKPOINTS_H

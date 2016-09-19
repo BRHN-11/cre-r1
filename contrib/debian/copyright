@@ -1,13 +1,13 @@
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
-Upstream-Name: Wuzhucoin
-Upstream-Contact: Wuzhucoin Dev Team <wuzhucoinsanzu@gmail.com>
- irc://#wuzhucoin@freenode.net
-Source: https://github.com/wuzhucoin/wuzhucoin
+Upstream-Name: Cowrie
+Upstream-Contact: Cowrie Dev Team <cowriesanzu@gmail.com>
+ irc://#cowrie@freenode.net
+Source: https://github.com/cowrie/cowrie
 
 Files: *
-Copyright: 2009-2012, Wuzhucoin Core Developers
+Copyright: 2009-2012, Cowrie Core Developers
 License: Expat
-Comment: The Wuzhucoin Core Developers encompasses the current developers listed on wuzhucoin.org,
+Comment: The Cowrie Core Developers encompasses the current developers listed on cowrie.org,
          as well as the numerous contributors to the project.
 
 License: Expat

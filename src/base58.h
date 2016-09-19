@@ -1,5 +1,5 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
  * - E-mail usually won't line-break if there's no punctuation to break at.
  * - Double-clicking selects the whole number as one word if it's all alphanumeric.
  */
-#ifndef WUZHUCOIN_BASE58_H
-#define WUZHUCOIN_BASE58_H
+#ifndef COWRIE_BASE58_H
+#define COWRIE_BASE58_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -94,13 +94,13 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded Wuzhucoin addresses.
+/** base58-encoded Cowrie addresses.
  * Public-key-hash-addresses have version 0 (or 111 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 5 (or 196 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
-class CWuzhucoinAddress : public CBase58Data {
+class CCowrieAddress : public CBase58Data {
 public:
     bool Set(const CKeyID &id);
     bool Set(const CScriptID &id);
@@ -108,10 +108,10 @@ public:
     bool IsValid() const;
     bool IsValid(const CChainParams &params) const;
 
-    CWuzhucoinAddress() {}
-    CWuzhucoinAddress(const CTxDestination &dest) { Set(dest); }
-    CWuzhucoinAddress(const std::string& strAddress) { SetString(strAddress); }
-    CWuzhucoinAddress(const char* pszAddress) { SetString(pszAddress); }
+    CCowrieAddress() {}
+    CCowrieAddress(const CTxDestination &dest) { Set(dest); }
+    CCowrieAddress(const std::string& strAddress) { SetString(strAddress); }
+    CCowrieAddress(const char* pszAddress) { SetString(pszAddress); }
 
     CTxDestination Get() const;
     bool GetKeyID(CKeyID &keyID) const;
@@ -121,7 +121,7 @@ public:
 /**
  * A base58-encoded secret key
  */
-class CWuzhucoinSecret : public CBase58Data
+class CCowrieSecret : public CBase58Data
 {
 public:
     void SetKey(const CKey& vchSecret);
@@ -130,11 +130,11 @@ public:
     bool SetString(const char* pszSecret);
     bool SetString(const std::string& strSecret);
 
-    CWuzhucoinSecret(const CKey& vchSecret) { SetKey(vchSecret); }
-    CWuzhucoinSecret() {}
+    CCowrieSecret(const CKey& vchSecret) { SetKey(vchSecret); }
+    CCowrieSecret() {}
 };
 
-template<typename K, int Size, CChainParams::Base58Type Type> class CWuzhucoinExtKeyBase : public CBase58Data
+template<typename K, int Size, CChainParams::Base58Type Type> class CCowrieExtKeyBase : public CBase58Data
 {
 public:
     void SetKey(const K &key) {
@@ -149,14 +149,14 @@ public:
         return ret;
     }
 
-    CWuzhucoinExtKeyBase(const K &key) {
+    CCowrieExtKeyBase(const K &key) {
         SetKey(key);
     }
 
-    CWuzhucoinExtKeyBase() {}
+    CCowrieExtKeyBase() {}
 };
 
-typedef CWuzhucoinExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CWuzhucoinExtKey;
-typedef CWuzhucoinExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CWuzhucoinExtPubKey;
+typedef CCowrieExtKeyBase<CExtKey, 74, CChainParams::EXT_SECRET_KEY> CCowrieExtKey;
+typedef CCowrieExtKeyBase<CExtPubKey, 74, CChainParams::EXT_PUBLIC_KEY> CCowrieExtPubKey;
 
-#endif // WUZHUCOIN_BASE58_H
+#endif // COWRIE_BASE58_H

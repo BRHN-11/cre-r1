@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/wuzhucoin-config.h"
+#include "config/cowrie-config.h"
 #endif
 
 #include "util.h"
@@ -360,7 +360,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "wuzhucoin";
+    const char* pszModule = "cowrie";
 #endif
     if (pex)
         return strprintf(
@@ -381,13 +381,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Wuzhucoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Wuzhucoin
-    // Mac: ~/Library/Application Support/Wuzhucoin
-    // Unix: ~/.wuzhucoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Cowrie
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Cowrie
+    // Mac: ~/Library/Application Support/Cowrie
+    // Unix: ~/.cowrie
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Wuzhucoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Cowrie";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -399,10 +399,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Wuzhucoin";
+    return pathRet / "Cowrie";
 #else
     // Unix
-    return pathRet / ".wuzhucoin";
+    return pathRet / ".cowrie";
 #endif
 #endif
 }
@@ -449,7 +449,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "wuzhucoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "cowrie.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -461,14 +461,14 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
-        return; // No wuzhucoin.conf file is OK
+        return; // No cowrie.conf file is OK
 
     set<string> setOptions;
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override wuzhucoin.conf
+        // Don't overwrite existing settings so command line settings override cowrie.conf
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -485,7 +485,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "wuzhucoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "cowried.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

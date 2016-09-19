@@ -1,12 +1,12 @@
 *.tar.gz
 
 *.exe
-src/wuzhucoin
-src/wuzhucoind
-src/wuzhucoin-cli
-src/wuzhucoin-tx
-src/test/test_wuzhucoin
-src/qt/test/test_wuzhucoin-qt
+src/cowrie
+src/cowried
+src/cowrie-cli
+src/cowrie-tx
+src/test/test_cowrie
+src/qt/test/test_cowrie-qt
 
 # autoreconf
 Makefile.in
@@ -29,8 +29,8 @@ config.log
 config.status
 configure
 libtool
-src/config/wuzhucoin-config.h
-src/config/wuzhucoin-config.h.in
+src/config/cowrie-config.h
+src/config/cowrie-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -55,7 +55,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.wuzhucoin
+.cowrie
 *.a
 *.pb.cc
 *.pb.h
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-wuzhucoin-qt
-Wuzhucoin-Qt.app
+cowrie-qt
+Cowrie-Qt.app
 
 # Unit-tests
 Makefile.test
-wuzhucoin-qt_test
+cowrie-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -95,7 +95,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_wuzhucoin.coverage/
+test_cowrie.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -103,7 +103,7 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
-qa/pull-tester/run-wuzhucoind-for-test.sh
+qa/pull-tester/run-cowried-for-test.sh
 qa/pull-tester/tests-config.sh
 qa/pull-tester/cache/*
 qa/pull-tester/test.*/*

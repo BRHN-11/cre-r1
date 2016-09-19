@@ -1,12 +1,12 @@
-// Copyright (c) 2014 The Wuzhucoin developers
+// Copyright (c) 2014 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_CRYPTO_COMMON_H
-#define WUZHUCOIN_CRYPTO_COMMON_H
+#ifndef COWRIE_CRYPTO_COMMON_H
+#define COWRIE_CRYPTO_COMMON_H
 
 #if defined(HAVE_CONFIG_H)
-#include "wuzhucoin-config.h"
+#include "cowrie-config.h"
 #endif
 
 #include <stdint.h>
@@ -117,4 +117,4 @@ void static inline WriteBE64(unsigned char* ptr, uint64_t x)
 #endif
 }
 
-#endif // WUZHUCOIN_CRYPTO_COMMON_H
+#endif // COWRIE_CRYPTO_COMMON_H

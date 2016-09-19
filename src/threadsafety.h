@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2009-2012 The Wuzhucoin developers
+// Copyright (c) 2009-2012 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_THREADSAFETY_H
-#define WUZHUCOIN_THREADSAFETY_H
+#ifndef COWRIE_THREADSAFETY_H
+#define COWRIE_THREADSAFETY_H
 
 #ifdef __clang__
 // TL;DR Add GUARDED_BY(mutex) to member variables. The others are
@@ -52,4 +52,4 @@
 #define NO_THREAD_SAFETY_ANALYSIS
 #endif // __GNUC__
 
-#endif // WUZHUCOIN_THREADSAFETY_H
+#endif // COWRIE_THREADSAFETY_H

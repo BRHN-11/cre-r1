@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_RANDOM_H
-#define WUZHUCOIN_RANDOM_H
+#ifndef COWRIE_RANDOM_H
+#define COWRIE_RANDOM_H
 
 #include "uint256.h"
 
@@ -46,4 +46,4 @@ static inline uint32_t insecure_rand(void)
     return (insecure_rand_Rw << 16) + insecure_rand_Rz;
 }
 
-#endif // WUZHUCOIN_RANDOM_H
+#endif // COWRIE_RANDOM_H

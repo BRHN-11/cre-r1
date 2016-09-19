@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_WALLET_H
-#define WUZHUCOIN_WALLET_H
+#ifndef COWRIE_WALLET_H
+#define COWRIE_WALLET_H
 
 #include "amount.h"
 #include "primitives/block.h"
@@ -1080,4 +1080,4 @@ private:
     std::vector<char> _ssExtra;
 };
 
-#endif // WUZHUCOIN_WALLET_H
+#endif // COWRIE_WALLET_H

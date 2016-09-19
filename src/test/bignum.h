@@ -1,10 +1,10 @@
 // Copyright (c) 2016 cybercode technologies
-// Copyright (c) 2009-2013 The Wuzhucoin developers
+// Copyright (c) 2009-2013 The Cowrie developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_TEST_BIGNUM_H
-#define WUZHUCOIN_TEST_BIGNUM_H
+#ifndef COWRIE_TEST_BIGNUM_H
+#define COWRIE_TEST_BIGNUM_H
 
 #include <algorithm>
 #include <limits>
@@ -177,4 +177,4 @@ inline bool operator>=(const CBigNum& a, const CBigNum& b) { return (BN_cmp(&a, 
 inline bool operator<(const CBigNum& a, const CBigNum& b)  { return (BN_cmp(&a, &b) < 0); }
 inline bool operator>(const CBigNum& a, const CBigNum& b)  { return (BN_cmp(&a, &b) > 0); }
 
-#endif // WUZHUCOIN_TEST_BIGNUM_H
+#endif // COWRIE_TEST_BIGNUM_H

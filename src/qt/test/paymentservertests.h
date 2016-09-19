@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Wuzhucoin developers
+// Copyright (c) 2016 The Cowrie developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef WUZHUCOIN_QT_TEST_PAYMENTSERVERTESTS_H
-#define WUZHUCOIN_QT_TEST_PAYMENTSERVERTESTS_H
+#ifndef COWRIE_QT_TEST_PAYMENTSERVERTESTS_H
+#define COWRIE_QT_TEST_PAYMENTSERVERTESTS_H
 
 #include "../paymentserver.h"
 
@@ -32,4 +32,4 @@ public:
     SendCoinsRecipient recipient;
 };
 
-#endif // WUZHUCOIN_QT_TEST_PAYMENTSERVERTESTS_H
+#endif // COWRIE_QT_TEST_PAYMENTSERVERTESTS_H

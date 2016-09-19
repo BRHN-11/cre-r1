@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Cowrie
+Comment=Cowrie P2P Cryptocurrency
+Comment[fr]=Cowrie, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Cowrie, eşten eşe kriptografik sanal para birimi
+Exec=cowrie-qt %u
+Terminal=false
+Type=Application
+Icon=cowrie128
+MimeType=x-scheme-handler/cowrie;
+Categories=Office;Finance;
