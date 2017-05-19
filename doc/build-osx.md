@@ -46,7 +46,7 @@ The homebrew package for berkeley-db4 has been broken for some time.  It will in
 
 Running this command takes you into brew's interactive mode, which allows you to configure, make, and install by hand:
 ```
-$ brew install https://raw.github.com/mxcl/homebrew/master/Library/Formula/berkeley-db4.rb -–without-java 
+$ brew install https://raw.github.com/mxcl/homebrew/master/Library/Formula/berkeley-db4.rb -–without-java
 ```
 
 The rest of these commands are run inside brew interactive mode:
@@ -62,6 +62,8 @@ After exiting, you'll get a warning that the install is keg-only, which means it
 
     $ brew link --force berkeley-db4
 
+./configure --with-boost-libdir=/usr/local/Cellar/boost/1.63.0/lib
+echo 'export PATH="/usr/local/opt/berkeley-db@4/bin:$PATH"' >> ~/.bash_profile
 
 ### Building `cowried`
 
