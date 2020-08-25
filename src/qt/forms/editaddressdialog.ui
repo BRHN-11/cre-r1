@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>457</width>
-    <height>126</height>
+    <height>184</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,11 +15,18 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Addresses Management</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QFormLayout" name="formLayout">
      <property name="fieldGrowthPolicy">
       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
      </property>
-     <item row="0" column="0">
+     <item row="1" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>&amp;Label</string>
@@ -29,27 +36,27 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="1" column="1">
       <widget class="QLineEdit" name="labelEdit">
        <property name="toolTip">
         <string>The label associated with this address list entry</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="1">
+      <widget class="QValidatedLineEdit" name="addressEdit">
+       <property name="toolTip">
+        <string>The address associated with this address list entry. This can only be modified for sending addresses.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>&amp;Address</string>
        </property>
        <property name="buddy">
         <cstring>addressEdit</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QValidatedLineEdit" name="addressEdit">
-       <property name="toolTip">
-        <string>The address associated with this address list entry. This can only be modified for sending addresses.</string>
        </property>
       </widget>
      </item>
