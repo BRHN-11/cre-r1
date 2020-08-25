@@ -1,6 +1,6 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build Cowrie in Unix. 
+Some notes on how to build Cowrie in Unix.
 
 Note
 ---------------------
@@ -58,7 +58,7 @@ Dependency Build Instructions: Ubuntu & Debian
 Build requirements:
 
 	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev
-	
+
 for Ubuntu 12.04 and later or Debian 7 and later libboost-all-dev has to be installed:
 
 	sudo apt-get install libboost-all-dev
@@ -201,7 +201,7 @@ Hardening enables the following features:
     randomly located as well.
 
     On an Amd64 processor where a library was not compiled with -fPIC, this will cause an error
-    such as: "relocation R_X86_64_32 against `......' can not be used when making a shared object;"
+    such as: "relocation R_X86_64_32 against ...... can not be used when making a shared object;"
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
@@ -238,4 +238,3 @@ In this case there is no dependency on Berkeley DB 4.8.
 
 Mining is also possible in disable-wallet mode, but only using the `getblocktemplate` RPC
 call not `getwork`.
-

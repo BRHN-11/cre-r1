@@ -47,8 +47,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>659</width>
-          <height>348</height>
+          <width>2956</width>
+          <height>310</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -57,8 +57,11 @@
            <property name="cursor">
             <cursorShape>IBeamCursor</cursorShape>
            </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;docs-internal-guid-0de28e97-61b7-f42d-e664-d6bcce2fd4ad&quot;/&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;G&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;ROUND RULES&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;Intellectual Property: &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; color:#444444; background-color:#ffffff;&quot;&gt;Licensor hereby warrants that The Software does not violate or infringe any 3rd party claims in regards to intellectual property, patents and/or trademarks and that to the best of its knowledge no legal action has been taken against it for any infringement or violation of any 3rd party intellectual property rights.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;No-Warranty:&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; color:#444444; background-color:#ffffff;&quot;&gt; The Software is provided without any warranty; Licensor hereby disclaims any warranty that The Software shall be error free, without defects or code which may cause damage to Licensee’s computers or to Licensee, and that Software shall be functional. Licensee shall be solely liable to any damage, defect or loss incurred as a result of operating software and undertake the risks contained in running The Software on License’s Server[s] and Website[s].&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;Prior Inspection: &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; color:#444444; background-color:#ffffff;&quot;&gt;Licensee hereby states that he inspected The Software thoroughly and found it satisfactory and adequate to his needs, that it does not interfere with his regular operation and that it does meet the standards and scope of his computer systems and architecture. Licensee found that The Software interacts with his development, website and server environment and that it does not infringe any of End User License Agreement of any software Licensee may use in performing his services. Licensee hereby waives any claims regarding The Software's incompatibility, performance, results and features, and warrants that he inspected the The Software.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-weight:696; color:#444444; background-color:#ffffff;&quot;&gt;Morals&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; color:#444444; background-color:#ffffff;&quot;&gt;: Cowrie Team and society respects the law and shall be govern by the laws of the human rights and without regard to its conflict of law provision&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
            <property name="textFormat">
-            <enum>Qt::PlainText</enum>
+            <enum>Qt::AutoText</enum>
            </property>
            <property name="openExternalLinks">
             <bool>true</bool>
